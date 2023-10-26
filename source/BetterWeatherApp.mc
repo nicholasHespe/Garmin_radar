@@ -7,6 +7,8 @@ const IMG_NUM = 7;
 var img_request_response = 200;
 var imgs_remaining = IMG_NUM-1;
 
+var URL_FORMAT = "http://garminradar.mooo.com/images/$1$.png"
+
 var imgs_template = new Array<Null or WatchUi.BitmapResource>[IMG_NUM];
 
 class BetterWeatherApp extends Application.AppBase {
@@ -16,7 +18,7 @@ class BetterWeatherApp extends Application.AppBase {
     function onImageReceived(responseCode as $.Toybox.Lang.Number , data as Null or $.Toybox.Graphics.BitmapReference or $.Toybox.WatchUi.BitmapResource) as Void {
         img_request_response = responseCode;
         if (responseCode != 200) {
-            MakeRequest( Lang.format("http://220.244.107.80/webscraping/images/$1$.png" , [imgs_remaining] ) );
+            MakeRequest( Lang.format(URL_FORMAT , [imgs_remaining] ) );
         }else{
             // Store img in Storage
             var imgs = Storage.getValue("radar_imgaes");
@@ -27,7 +29,7 @@ class BetterWeatherApp extends Application.AppBase {
             if( imgs_remaining != 0 ){
                 // Decrement image counter
                 imgs_remaining--;
-                MakeRequest( Lang.format("http://220.244.107.80/webscraping/images/$1$.png" , [imgs_remaining] ) );
+                MakeRequest( Lang.format(URL_FORMAT , [imgs_remaining] ) );
             }else{
                 refreshImgTimer.start(method(:GetImages), 5*60000, false);
             }
@@ -48,7 +50,7 @@ class BetterWeatherApp extends Application.AppBase {
 
     function GetImages() as Void{
         imgs_remaining = IMG_NUM-1;
-        MakeRequest( Lang.format("http://220.244.107.80/webscraping/images/$1$.png" , [imgs_remaining] ) );
+        MakeRequest( Lang.format(URL_FORMAT , [imgs_remaining] ) );
     }
 
     function initialize() {
@@ -68,7 +70,7 @@ class BetterWeatherApp extends Application.AppBase {
     function onUpdate() as Void {
         System.println("hey");
         if (imgs_remaining == IMG_NUM-1){
-            MakeRequest( Lang.format("http://220.244.107.80/webscraping/images/$1$.png" , [imgs_remaining] ) );
+            MakeRequest( Lang.format(URL_FORMAT , [imgs_remaining] ) );
         }
     }
 

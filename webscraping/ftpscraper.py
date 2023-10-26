@@ -4,6 +4,7 @@ import time
 from PIL import Image
 import os
 import numpy as np
+import subprocess
 
 def DownloadFile(fn: str) -> bool:
     try:
@@ -68,19 +69,20 @@ def CombineImages(num: int, cols: int):
     new_im.save('images/radar.png', "PNG")
 
 
-# while True:
-#     image_count = 7
-#     with FTP("ftp.bom.gov.au") as ftp:
-#         # Create filename based on 2 mins ago
-#         filename = (datetime.utcnow() - timedelta(minutes=6) ).strftime('IDR714.T.%Y%m%d%H%M.png')
-#         ftp.login()
-#         ftp.cwd("anon/gen/radar")
-#         if DownloadFile(filename):
-#             CropAndResize(filename)
-#             UpdateImageNames(filename,image_count)
-#             CombineImages(image_count,3)
-#         os.remove(filename)
-#     time.sleep(60)
+while True:
+    image_count = 7
+    with FTP("ftp.bom.gov.au") as ftp:
+        # Create filename based on 2 mins ago
+        filename = (datetime.utcnow() - timedelta(minutes=6) ).strftime('IDR714.T.%Y%m%d%H%M.png')
+        ftp.login()
+        ftp.cwd("anon/gen/radar")
+        if DownloadFile(filename):
+            CropAndResize(filename)
+            UpdateImageNames(filename,image_count)
+            CombineImages(image_count,3)
+        os.remove(filename)
+        subprocess.call('./updateDNS.sh', stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    time.sleep(60)
 
 # path = '../radar_backgrounds_orginal/'
 # filelist=os.listdir(path)
