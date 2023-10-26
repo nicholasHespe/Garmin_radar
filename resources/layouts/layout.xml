@@ -1,0 +1,4 @@
+<layout id="MainLayout">
+    <bitmap id="bg" x="center" y="center" filename="../radar_backgrounds/comb.png" visible="true"  />
+    <drawable id="TimeRing" class="CustomTimeRing"/>
+</layout>

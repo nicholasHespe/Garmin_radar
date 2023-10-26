@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<debugInfo>
+    <manifest filename="D:\Files\2023\Garmin Apps\BetterWeather\manifest.xml"/>
+    <pcToLineNum>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherApp.mc" id="1" lineNum="10" parent="globals" pc="268435457" symbol="&lt;init&gt;"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherDelegate.mc" id="6" lineNum="4" parent="globals/RadarDelegate" pc="268435472" symbol="&lt;init&gt;"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherDelegate.mc" id="7" lineNum="13" parent="globals/RadarDelegate" pc="268435491" symbol="onPreviousPage"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherDelegate.mc" id="7" lineNum="14" parent="globals/RadarDelegate" pc="268435493" symbol="onPreviousPage"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherDelegate.mc" id="7" lineNum="15" parent="globals/RadarDelegate" pc="268435511" symbol="onPreviousPage"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherDelegate.mc" id="8" lineNum="8" parent="globals/RadarDelegate" pc="268435514" symbol="initialize"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherDelegate.mc" id="8" lineNum="9" parent="globals/RadarDelegate" pc="268435516" symbol="initialize"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherDelegate.mc" id="8" lineNum="10" parent="globals/RadarDelegate" pc="268435534" symbol="initialize"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherView.mc" id="9" lineNum="11" parent="globals/BetterWeatherView" pc="268435545" symbol="&lt;init&gt;"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherView.mc" id="9" lineNum="13" parent="globals/BetterWeatherView" pc="268435563" symbol="&lt;init&gt;"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherView.mc" id="11" lineNum="38" parent="globals/BetterWeatherView" pc="268435598" symbol="onLayout"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherView.mc" id="11" lineNum="39" parent="globals/BetterWeatherView" pc="268435600" symbol="onLayout"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherView.mc" id="12" lineNum="31" parent="globals/BetterWeatherView" pc="268435642" symbol="initialize"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherView.mc" id="12" lineNum="32" parent="globals/BetterWeatherView" pc="268435644" symbol="initialize"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherView.mc" id="12" lineNum="33" parent="globals/BetterWeatherView" pc="268435662" symbol="initialize"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherView.mc" id="12" lineNum="34" parent="globals/BetterWeatherView" pc="268435688" symbol="initialize"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherView.mc" id="14" lineNum="49" parent="globals/BetterWeatherView" pc="268435733" symbol="onUpdate"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherView.mc" id="14" lineNum="51" parent="globals/BetterWeatherView" pc="268435735" symbol="onUpdate"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherView.mc" id="15" lineNum="16" parent="globals/BetterWeatherView" pc="268435756" symbol="timerCallback"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherView.mc" id="15" lineNum="17" parent="globals/BetterWeatherView" pc="268435760" symbol="timerCallback"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherView.mc" id="15" lineNum="18" parent="globals/BetterWeatherView" pc="268435782" symbol="timerCallback"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherView.mc" id="15" lineNum="19" parent="globals/BetterWeatherView" pc="268435795" symbol="timerCallback"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherView.mc" id="15" lineNum="20" parent="globals/BetterWeatherView" pc="268435805" symbol="timerCallback"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherView.mc" id="15" lineNum="21" parent="globals/BetterWeatherView" pc="268435816" symbol="timerCallback"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherView.mc" id="15" lineNum="23" parent="globals/BetterWeatherView" pc="268435823" symbol="timerCallback"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherView.mc" id="15" lineNum="24" parent="globals/BetterWeatherView" pc="268435834" symbol="timerCallback"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherView.mc" id="15" lineNum="26" parent="globals/BetterWeatherView" pc="268435847" symbol="timerCallback"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherView.mc" id="15" lineNum="27" parent="globals/BetterWeatherView" pc="268435870" symbol="timerCallback"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherView.mc" id="15" lineNum="28" parent="globals/BetterWeatherView" pc="268435886" symbol="timerCallback"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherView.mc" id="16" lineNum="62" parent="globals/CustomTimeRing" pc="268435931" symbol="&lt;init&gt;"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherView.mc" id="17" lineNum="67" parent="globals/CustomTimeRing" pc="268435950" symbol="initialize"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherView.mc" id="17" lineNum="71" parent="globals/CustomTimeRing" pc="268435952" symbol="initialize"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherView.mc" id="18" lineNum="74" parent="globals/CustomTimeRing" pc="268435973" symbol="draw"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherView.mc" id="18" lineNum="77" parent="globals/CustomTimeRing" pc="268435977" symbol="draw"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherView.mc" id="18" lineNum="78" parent="globals/CustomTimeRing" pc="268435999" symbol="draw"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherView.mc" id="18" lineNum="79" parent="globals/CustomTimeRing" pc="268436002" symbol="draw"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherView.mc" id="18" lineNum="80" parent="globals/CustomTimeRing" pc="268436025" symbol="draw"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherView.mc" id="18" lineNum="83" parent="globals/CustomTimeRing" pc="268436050" symbol="draw"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherView.mc" id="18" lineNum="84" parent="globals/CustomTimeRing" pc="268436072" symbol="draw"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherView.mc" id="18" lineNum="86" parent="globals/CustomTimeRing" pc="268436089" symbol="draw"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherView.mc" id="18" lineNum="87" parent="globals/CustomTimeRing" pc="268436110" symbol="draw"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherView.mc" id="18" lineNum="91" parent="globals/CustomTimeRing" pc="268436132" symbol="draw"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherView.mc" id="18" lineNum="92" parent="globals/CustomTimeRing" pc="268436150" symbol="draw"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherView.mc" id="18" lineNum="95" parent="globals/CustomTimeRing" pc="268436174" symbol="draw"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherView.mc" id="18" lineNum="97" parent="globals/CustomTimeRing" pc="268436237" symbol="draw"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherView.mc" id="18" lineNum="98" parent="globals/CustomTimeRing" pc="268436258" symbol="draw"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherApp.mc" id="19" lineNum="12" parent="globals/BetterWeatherApp" pc="268436337" symbol="&lt;init&gt;"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherApp.mc" id="19" lineNum="14" parent="globals/BetterWeatherApp" pc="268436355" symbol="&lt;init&gt;"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherApp.mc" id="21" lineNum="16" parent="globals/BetterWeatherApp" pc="268436392" symbol="onImageReceived"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherApp.mc" id="21" lineNum="17" parent="globals/BetterWeatherApp" pc="268436396" symbol="onImageReceived"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherApp.mc" id="21" lineNum="18" parent="globals/BetterWeatherApp" pc="268436406" symbol="onImageReceived"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherApp.mc" id="21" lineNum="19" parent="globals/BetterWeatherApp" pc="268436417" symbol="onImageReceived"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherApp.mc" id="21" lineNum="22" parent="globals/BetterWeatherApp" pc="268436474" symbol="onImageReceived"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherApp.mc" id="21" lineNum="23" parent="globals/BetterWeatherApp" pc="268436496" symbol="onImageReceived"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherApp.mc" id="21" lineNum="24" parent="globals/BetterWeatherApp" pc="268436509" symbol="onImageReceived"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherApp.mc" id="21" lineNum="27" parent="globals/BetterWeatherApp" pc="268436532" symbol="onImageReceived"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherApp.mc" id="21" lineNum="29" parent="globals/BetterWeatherApp" pc="268436549" symbol="onImageReceived"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherApp.mc" id="21" lineNum="30" parent="globals/BetterWeatherApp" pc="268436568" symbol="onImageReceived"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherApp.mc" id="21" lineNum="32" parent="globals/BetterWeatherApp" pc="268436625" symbol="onImageReceived"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherApp.mc" id="22" lineNum="37" parent="globals/BetterWeatherApp" pc="268436667" symbol="MakeRequest"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherApp.mc" id="22" lineNum="38" parent="globals/BetterWeatherApp" pc="268436671" symbol="MakeRequest"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherApp.mc" id="22" lineNum="39" parent="globals/BetterWeatherApp" pc="268436674" symbol="MakeRequest"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherApp.mc" id="22" lineNum="45" parent="globals/BetterWeatherApp" pc="268436708" symbol="MakeRequest"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherApp.mc" id="22" lineNum="46" parent="globals/BetterWeatherApp" pc="268436762" symbol="MakeRequest"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherApp.mc" id="23" lineNum="80" parent="globals/BetterWeatherApp" pc="268436803" symbol="getInitialView"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherApp.mc" id="23" lineNum="81" parent="globals/BetterWeatherApp" pc="268436805" symbol="getInitialView"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherApp.mc" id="24" lineNum="54" parent="globals/BetterWeatherApp" pc="268436896" symbol="initialize"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherApp.mc" id="24" lineNum="55" parent="globals/BetterWeatherApp" pc="268436898" symbol="initialize"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherApp.mc" id="24" lineNum="56" parent="globals/BetterWeatherApp" pc="268436916" symbol="initialize"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherApp.mc" id="24" lineNum="57" parent="globals/BetterWeatherApp" pc="268436941" symbol="initialize"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherApp.mc" id="24" lineNum="58" parent="globals/BetterWeatherApp" pc="268436962" symbol="initialize"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherApp.mc" id="24" lineNum="59" parent="globals/BetterWeatherApp" pc="268436991" symbol="initialize"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherApp.mc" id="24" lineNum="61" parent="globals/BetterWeatherApp" pc="268437014" symbol="initialize"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherApp.mc" id="25" lineNum="49" parent="globals/BetterWeatherApp" pc="268437027" symbol="GetImages"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherApp.mc" id="25" lineNum="50" parent="globals/BetterWeatherApp" pc="268437029" symbol="GetImages"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherApp.mc" id="25" lineNum="51" parent="globals/BetterWeatherApp" pc="268437042" symbol="GetImages"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherApp.mc" id="26" lineNum="68" parent="globals/BetterWeatherApp" pc="268437097" symbol="onUpdate"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherApp.mc" id="26" lineNum="69" parent="globals/BetterWeatherApp" pc="268437099" symbol="onUpdate"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherApp.mc" id="26" lineNum="70" parent="globals/BetterWeatherApp" pc="268437122" symbol="onUpdate"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherApp.mc" id="26" lineNum="71" parent="globals/BetterWeatherApp" pc="268437139" symbol="onUpdate"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherApp.mc" id="28" lineNum="85" parent="globals" pc="268437194" symbol="getApp"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherApp.mc" id="28" lineNum="86" parent="globals" pc="268437204" symbol="getApp"/>
+        <entry filename="d:\\Files\\2023\\Garmin Apps\\BetterWeather\\gen\\006-B3589-00\\source\\Rez.mcgen" id="29" lineNum="7" parent="globals/Rez" pc="268437220" symbol="&lt;init&gt;"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherMenuDelegate.mc" id="30" lineNum="5" parent="globals/BetterWeatherMenuDelegate" pc="268437244" symbol="&lt;init&gt;"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherMenuDelegate.mc" id="31" lineNum="11" parent="globals/BetterWeatherMenuDelegate" pc="268437263" symbol="onMenuItem"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherMenuDelegate.mc" id="31" lineNum="12" parent="globals/BetterWeatherMenuDelegate" pc="268437265" symbol="onMenuItem"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherMenuDelegate.mc" id="31" lineNum="13" parent="globals/BetterWeatherMenuDelegate" pc="268437276" symbol="onMenuItem"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherMenuDelegate.mc" id="31" lineNum="14" parent="globals/BetterWeatherMenuDelegate" pc="268437300" symbol="onMenuItem"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherMenuDelegate.mc" id="31" lineNum="15" parent="globals/BetterWeatherMenuDelegate" pc="268437311" symbol="onMenuItem"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherMenuDelegate.mc" id="32" lineNum="7" parent="globals/BetterWeatherMenuDelegate" pc="268437333" symbol="initialize"/>
+        <entry filename="D:\\Files\\2023\\Garmin Apps\\BetterWeather\\source\\BetterWeatherMenuDelegate.mc" id="32" lineNum="8" parent="globals/BetterWeatherMenuDelegate" pc="268437335" symbol="initialize"/>
+        <entry filename="d:\\Files\\2023\\Garmin Apps\\BetterWeather\\gen\\006-B3589-00\\source\\Rez.mcgen" id="33" lineNum="20" parent="globals/Rez/Layouts" pc="268437354" symbol="MainLayout"/>
+        <entry filename="d:\\Files\\2023\\Garmin Apps\\BetterWeather\\gen\\006-B3589-00\\source\\Rez.mcgen" id="33" lineNum="21" parent="globals/Rez/Layouts" pc="268437366" symbol="MainLayout"/>
+        <entry filename="d:\\Files\\2023\\Garmin Apps\\BetterWeather\\gen\\006-B3589-00\\source\\Rez.mcgen" id="33" lineNum="22" parent="globals/Rez/Layouts" pc="268437471" symbol="MainLayout"/>
+        <entry filename="d:\\Files\\2023\\Garmin Apps\\BetterWeather\\gen\\006-B3589-00\\source\\Rez.mcgen" id="33" lineNum="24" parent="globals/Rez/Layouts" pc="268437523" symbol="MainLayout"/>
+        <entry filename="d:\\Files\\2023\\Garmin Apps\\BetterWeather\\gen\\006-B3589-00\\source\\Rez.mcgen" id="33" lineNum="26" parent="globals/Rez/Layouts" pc="268437570" symbol="MainLayout"/>
+        <entry filename="d:\\Files\\2023\\Garmin Apps\\BetterWeather\\gen\\006-B3589-00\\source\\Rez.mcgen" id="34" lineNum="31" parent="globals/Rez/Menus/MainMenu" pc="268437597" symbol="&lt;init&gt;"/>
+        <entry filename="d:\\Files\\2023\\Garmin Apps\\BetterWeather\\gen\\006-B3589-00\\source\\Rez.mcgen" id="35" lineNum="32" parent="globals/Rez/Menus/MainMenu" pc="268437616" symbol="initialize"/>
+        <entry filename="d:\\Files\\2023\\Garmin Apps\\BetterWeather\\gen\\006-B3589-00\\source\\Rez.mcgen" id="35" lineNum="33" parent="globals/Rez/Menus/MainMenu" pc="268437618" symbol="initialize"/>
+        <entry filename="d:\\Files\\2023\\Garmin Apps\\BetterWeather\\gen\\006-B3589-00\\source\\Rez.mcgen" id="35" lineNum="34" parent="globals/Rez/Menus/MainMenu" pc="268437636" symbol="initialize"/>
+        <entry filename="d:\\Files\\2023\\Garmin Apps\\BetterWeather\\gen\\006-B3589-00\\source\\Rez.mcgen" id="35" lineNum="35" parent="globals/Rez/Menus/MainMenu" pc="268437692" symbol="initialize"/>
+    </pcToLineNum>
+    <symbolTable>
+        <entry id="8388639" module="true" symbol="Graphics"/>
+        <entry id="8388632" method="true" symbol="&lt;init&gt;"/>
+        <entry id="7" module="true" symbol="globals/Rez/Menus"/>
+        <entry id="29" method="true" symbol="MainLayout"/>
+        <entry id="8390424" module="true" symbol="Storage"/>
+        <entry field="true" id="15" symbol="imgs_remaining"/>
+        <entry id="9" object="true" symbol="BetterWeatherApp"/>
+        <entry field="true" id="8388611" module="true" symbol="Toybox"/>
+        <entry field="true" id="31" symbol="AppName"/>
+        <entry id="8" module="true" symbol="globals/Rez/Strings"/>
+        <entry id="8388772" module="true" object="true" symbol="Fonts"/>
+        <entry id="8389345" symbol="rezId"/>
+        <entry id="8388648" module="true" symbol="WatchUi"/>
+        <entry id="22" method="true" symbol="MakeRequest"/>
+        <entry id="2" module="true" symbol="globals/Rez"/>
+        <entry field="true" id="34" symbol="prompt"/>
+        <entry id="8389124" method="true" symbol="onUpdate"/>
+        <entry field="true" id="8389065" symbol="locY"/>
+        <entry field="true" id="8389064" symbol="locX"/>
+        <entry field="true" id="17" symbol="mRadarCallback"/>
+        <entry id="8388771" module="true" object="true" symbol="Drawables"/>
+        <entry id="36" symbol="item_2"/>
+        <entry id="35" symbol="item_1"/>
+        <entry id="8389079" method="true" symbol="onPreviousPage"/>
+        <entry id="26" module="true" symbol="Menus"/>
+        <entry id="8389275" method="true" symbol="getApp"/>
+        <entry id="6" module="true" symbol="globals/Rez/Layouts"/>
+        <entry id="8389122" method="true" symbol="onLayout"/>
+        <entry field="true" id="8389063" symbol="identifier"/>
+        <entry field="true" id="20" symbol="updateTime"/>
+        <entry field="true" id="28" symbol="bg"/>
+        <entry id="11" object="true" symbol="BetterWeatherView"/>
+        <entry id="5" module="true" symbol="globals/Rez/JsonData"/>
+        <entry id="10" object="true" symbol="BetterWeatherMenuDelegate"/>
+        <entry id="8388637" module="true" symbol="Communications"/>
+        <entry id="3" module="true" symbol="globals/Rez/Drawables"/>
+        <entry id="13" object="true" symbol="RadarDelegate"/>
+        <entry id="30" object="true" symbol="MainMenu"/>
+        <entry id="8388644" module="true" symbol="System"/>
+        <entry id="8388645" module="true" symbol="Time"/>
+        <entry id="8388769" module="true" object="true" symbol="Rez"/>
+        <entry id="19" method="true" symbol="timerCallback"/>
+        <entry id="8388640" module="true" symbol="Lang"/>
+        <entry id="8390088" module="true" object="true" symbol="JsonData"/>
+        <entry id="8389068" method="true" symbol="draw"/>
+        <entry field="true" id="27" symbol="LauncherIcon"/>
+        <entry id="8388610" symbol="statics"/>
+        <entry id="8389123" method="true" symbol="onShow"/>
+        <entry field="true" id="14" symbol="img_request_response"/>
+        <entry id="21" method="true" symbol="GetImages"/>
+        <entry id="12" object="true" symbol="CustomTimeRing"/>
+        <entry field="true" id="24" symbol="refreshImgTimer"/>
+        <entry id="8389350" module="true" symbol="globals"/>
+        <entry field="true" id="18" symbol="myTimer"/>
+        <entry id="8388770" module="true" object="true" symbol="Strings"/>
+        <entry id="8388702" method="true" symbol="initialize"/>
+        <entry id="8389279" method="true" symbol="onStart"/>
+        <entry id="8389280" method="true" symbol="getInitialView"/>
+        <entry id="23" method="true" symbol="onImageReceived"/>
+        <entry id="8389281" method="true" symbol="onStop"/>
+        <entry id="8389109" method="true" symbol="onMenuItem"/>
+        <entry id="8388646" module="true" object="true" symbol="Timer"/>
+        <entry id="25" module="true" symbol="Layouts"/>
+        <entry id="8389694" symbol="dithering"/>
+        <entry id="8391907" symbol="packingFormat"/>
+        <entry field="true" id="16" symbol="imgs_template"/>
+        <entry id="4" module="true" symbol="globals/Rez/Fonts"/>
+        <entry id="8389125" method="true" symbol="onHide"/>
+        <entry id="8388635" module="true" symbol="Application"/>
+        <entry field="true" id="33" symbol="menu_label_2"/>
+        <entry field="true" id="32" symbol="menu_label_1"/>
+    </symbolTable>
+    <localVars>
+        <entry arg="true" endPc="268435544" name="reloadImagesCallback" stackId="1" startPc="268435514"/>
+        <entry arg="true" endPc="268435641" name="dc" stackId="1" startPc="268435598"/>
+        <entry arg="true" endPc="268435755" name="dc" stackId="1" startPc="268435733"/>
+        <entry endPc="268435929" name="wp" stackId="1" startPc="268435760"/>
+        <entry arg="true" endPc="268435972" name="params" stackId="1" startPc="268435950"/>
+        <entry arg="true" endPc="268436336" name="dc" stackId="1" startPc="268435973"/>
+        <entry endPc="268436335" name="wp" stackId="2" startPc="268435977"/>
+        <entry endPc="268436335" name="img" stackId="3" startPc="268435977"/>
+        <entry arg="true" endPc="268436666" name="responseCode" stackId="1" startPc="268436392"/>
+        <entry arg="true" endPc="268436666" name="data" stackId="2" startPc="268436392"/>
+        <entry endPc="268436665" name="imgs" stackId="3" startPc="268436474"/>
+        <entry arg="true" endPc="268436802" name="url" stackId="1" startPc="268436667"/>
+        <entry endPc="268436801" name="parameters" stackId="2" startPc="268436671"/>
+        <entry endPc="268436801" name="options" stackId="3" startPc="268436671"/>
+        <entry arg="true" endPc="268437332" name="item" stackId="1" startPc="268437263"/>
+        <entry arg="true" endPc="268437596" name="dc" stackId="1" startPc="268437354"/>
+        <entry endPc="268437596" name="rez_cmp_local_bitmap_bg" stackId="2" startPc="268437366"/>
+        <entry endPc="268437596" name="rez_cmp_local_custom_drawable_TimeRing" stackId="3" startPc="268437366"/>
+    </localVars>
+    <annotations>
+        <annotationEntry annotation="initialized" class="Drawables" module="globals/Rez" symbol="LauncherIcon"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="menu_label_2"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="menu_label_1"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="prompt"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="AppName"/>
+        <annotationEntry annotation="initialized" class="Drawables" module="globals/Rez" symbol="bg"/>
+    </annotations>
+    <dataEntryOffsetMappings>
+        <dataEntry label="globals" offset="87" parentId="" symbolId="globals" type="module"/>
+        <dataEntry label="globals/RadarDelegate" offset="206" parentId="globals" symbolId="RadarDelegate" type="class"/>
+        <dataEntry label="globals/BetterWeatherView" offset="269" parentId="globals" symbolId="BetterWeatherView" type="class"/>
+        <dataEntry label="globals/CustomTimeRing" offset="372" parentId="globals" symbolId="CustomTimeRing" type="class"/>
+        <dataEntry label="globals/BetterWeatherApp" offset="427" parentId="globals" symbolId="BetterWeatherApp" type="class"/>
+        <dataEntry label="globals/Rez" offset="538" parentId="globals" symbolId="Rez" type="module"/>
+        <dataEntry label="globals/BetterWeatherMenuDelegate" offset="617" parentId="globals" symbolId="BetterWeatherMenuDelegate" type="class"/>
+        <dataEntry label="globals/Rez/Drawables" offset="672" parentId="Rez" symbolId="Drawables" type="module"/>
+        <dataEntry label="globals/Rez/Layouts" offset="719" parentId="Rez" symbolId="Layouts" type="module"/>
+        <dataEntry label="globals/Rez/Menus" offset="758" parentId="Rez" symbolId="Menus" type="module"/>
+        <dataEntry label="globals/Rez/Fonts" offset="797" parentId="Rez" symbolId="Fonts" type="module"/>
+        <dataEntry label="globals/Rez/Strings" offset="828" parentId="Rez" symbolId="Strings" type="module"/>
+        <dataEntry label="globals/Rez/JsonData" offset="891" parentId="Rez" symbolId="JsonData" type="module"/>
+        <dataEntry label="globals/Rez/Menus/MainMenu" offset="922" parentId="Menus" symbolId="MainMenu" type="class"/>
+    </dataEntryOffsetMappings>
+    <functions>
+        <functionEntry accessMode="public" endPc="268435490" name="&lt;init&gt;" parent="RadarDelegate" startPc="268435472">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435513" name="onPreviousPage" parent="RadarDelegate" startPc="268435491">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435544" name="initialize" parent="RadarDelegate" startPc="268435514">
+            <param id="reloadImagesCallback"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435597" name="&lt;init&gt;" parent="BetterWeatherView" startPc="268435545">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="onShow" parent="BetterWeatherView">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435641" name="onLayout" parent="BetterWeatherView" startPc="268435598">
+            <param id="dc"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435732" name="initialize" parent="BetterWeatherView" startPc="268435642">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="onHide" parent="BetterWeatherView">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435755" name="onUpdate" parent="BetterWeatherView" startPc="268435733">
+            <param id="dc"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435930" name="timerCallback" parent="BetterWeatherView" startPc="268435756">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435949" name="&lt;init&gt;" parent="CustomTimeRing" startPc="268435931">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435972" name="initialize" parent="CustomTimeRing" startPc="268435950">
+            <param id="params"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436336" name="draw" parent="CustomTimeRing" startPc="268435973">
+            <param id="dc"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436391" name="&lt;init&gt;" parent="BetterWeatherApp" startPc="268436337">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="onStart" parent="BetterWeatherApp">
+            <param id="state"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436666" name="onImageReceived" parent="BetterWeatherApp" startPc="268436392">
+            <param id="responseCode"/>
+            <param id="data"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436802" name="MakeRequest" parent="BetterWeatherApp" startPc="268436667">
+            <param id="url"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436895" name="getInitialView" parent="BetterWeatherApp" startPc="268436803">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268437026" name="initialize" parent="BetterWeatherApp" startPc="268436896">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268437096" name="GetImages" parent="BetterWeatherApp" startPc="268437027">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268437193" name="onUpdate" parent="BetterWeatherApp" startPc="268437097">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="onStop" parent="BetterWeatherApp">
+            <param id="state"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268437219" name="getApp" startPc="268437194">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268437243" name="&lt;init&gt;" parent="Rez" startPc="268437220">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268437262" name="&lt;init&gt;" parent="BetterWeatherMenuDelegate" startPc="268437244">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268437332" name="onMenuItem" parent="BetterWeatherMenuDelegate" startPc="268437263">
+            <param id="item"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268437353" name="initialize" parent="BetterWeatherMenuDelegate" startPc="268437333">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="Drawables">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="Layouts">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="Menus">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="Fonts">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="Strings">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="JsonData">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268437596" name="MainLayout" parent="Layouts" startPc="268437354">
+            <param id="dc"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268437615" name="&lt;init&gt;" parent="MainMenu" startPc="268437597">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268437748" name="initialize" parent="MainMenu" startPc="268437616">
+            <documentation/>
+        </functionEntry>
+    </functions>
+</debugInfo>

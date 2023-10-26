@@ -1,0 +1,46 @@
+import Toybox.Lang;
+using Toybox.WatchUi;
+using Toybox.WatchUi as Ui;
+using Toybox.Graphics;
+using Toybox.Graphics as Gfx;
+
+module Rez {
+    module Drawables {
+        (:initialized) var bg as Symbol;
+        (:initialized) var LauncherIcon as Symbol;
+    } // Drawables
+
+    module Fonts {
+    } // Fonts
+
+    module JsonData {
+    } // JsonData
+
+    module Layouts {
+        function MainLayout(dc as Graphics.Dc) as Array<WatchUi.Drawable> {
+            var rez_cmp_local_bitmap_bg = new WatchUi.Bitmap({:identifier=>"bg", :rezId=>$.Rez.Drawables.bg, :locX=>WatchUi.LAYOUT_HALIGN_CENTER, :locY=>WatchUi.LAYOUT_VALIGN_CENTER});
+            rez_cmp_local_bitmap_bg.setLocation(((240 - rez_cmp_local_bitmap_bg.width) * 0.5), ((240 - rez_cmp_local_bitmap_bg.height) * 0.5));
+
+            var rez_cmp_local_custom_drawable_TimeRing = new CustomTimeRing({:identifier=>"TimeRing"});
+
+            return [rez_cmp_local_bitmap_bg, rez_cmp_local_custom_drawable_TimeRing] as Array<WatchUi.Drawable>;
+        }
+    } // Layouts
+
+    module Menus {
+        class MainMenu extends WatchUi.Menu {
+            function initialize() {
+                Menu.initialize();
+                addItem((WatchUi.loadResource($.Rez.Strings.menu_label_1) as String), :item_1);
+                addItem((WatchUi.loadResource($.Rez.Strings.menu_label_2) as String), :item_2);
+            }
+        }
+    } // Menus
+
+    module Strings {
+        (:initialized) var menu_label_1 as Symbol;
+        (:initialized) var menu_label_2 as Symbol;
+        (:initialized) var prompt as Symbol;
+        (:initialized) var AppName as Symbol;
+    } // Strings
+} // Rez

@@ -1,0 +1,44 @@
+[ @file = "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherDelegate.mc"; @line = 1; ]
+import Toybox.Lang;
+[ @file = "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherDelegate.mc"; @line = 2; ]
+import Toybox.WatchUi;
+[ @file = "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherDelegate.mc"; @line = 4; ]
+class RadarDelegate extends WatchUi.BehaviorDelegate{
+    [ @file = "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherDelegate.mc"; @line = 4; ]
+    <init> {
+    }
+    [ @file = "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherDelegate.mc"; @line = 4; ]
+    static
+    <init> {
+    }
+    [ @file = "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherDelegate.mc"; @line = 6; @position = 8; ]
+    var mRadarCallback as Lang.Method;
+    [ @file = "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherDelegate.mc"; @line = 8; ]
+    public
+    function initialize(reloadImagesCallback) as Void {
+D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherDelegate_mc_8_55_start:
+[ "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherDelegate.mc" 9 8 ]
+        %tmp.2 = getv ? :BehaviorDelegate;
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+[ "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherDelegate.mc" 10 8 ]
+        %tmp.5 = lgetv %reloadImagesCallback;
+        putv self :mRadarCallback %tmp.5;
+D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherDelegate_mc_8_55_stop:
+    }
+    [ @file = "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherDelegate.mc"; @line = 13; ]
+    function onPreviousPage() as Boolean {
+D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherDelegate_mc_13_41_start:
+[ "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherDelegate.mc" 14 8 ]
+        %tmp.2 = getv ? :mRadarCallback;
+        %tmp.3 = getv function %tmp.2 :invoke;
+        invoke %tmp.2 %tmp.3();
+[ "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherDelegate.mc" 15 8 ]
+        %tmp.4 = true;
+        ret %tmp.4;
+D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherDelegate_mc_13_41_stop:
+    }
+}
+[ @file = "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherDelegate.mc"; @line = 1; ]
+<init> {
+}
