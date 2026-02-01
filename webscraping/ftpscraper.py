@@ -207,7 +207,7 @@ def CombineImages(num: int, cols: int):
 
 
 # Configuration
-RADAR_ID = 'IDR031'  # Default radar station (can be changed based on GPS)
+RADAR_ID = 'IDR133'  # Default radar station (can be changed based on GPS)
 image_count = 7
 composite_bg_path = 'composite_background.png'
 

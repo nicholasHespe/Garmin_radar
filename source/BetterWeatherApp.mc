@@ -5,6 +5,7 @@ import Toybox.Time;
 import Toybox.Application.Storage;
 import Toybox.Communications;
 import Toybox.Timer;
+import Toybox.Position;
 using Toybox.System;
 
 const IMG_NUM = 7;
@@ -71,6 +72,35 @@ class BetterWeatherApp extends Application.AppBase {
         MakeRequest( Lang.format(URL_FORMAT , [imgs_remaining] ) );
     }
 
+    function onLocationUpdate(info as Position.Info) as Void {
+        if (info has :position && info.position != null) {
+            var pos = info.position.toDegrees();
+            var lat = pos[0];
+            var lon = pos[1];
+            System.println(Lang.format("GPS Location: $1$, $2$", [lat, lon]));
+            SendLocationToServer(lat, lon);
+        }
+    }
+
+    function SendLocationToServer(lat as Float, lon as Float) as Void {
+        var url = Lang.format("http://betterweather.nickhespe.com/api/location?lat=$1$&lon=$2$", [lat, lon]);
+        var params = {};
+        var options = {
+            :method => Communications.HTTP_REQUEST_METHOD_GET,
+            :responseType => Communications.HTTP_RESPONSE_CONTENT_TYPE_JSON
+        };
+
+        System.println(Lang.format("Sending GPS to server: $1$", [url]));
+        Communications.makeWebRequest(url, params, options, method(:onLocationSent));
+    }
+
+    function onLocationSent(responseCode as Number, data as Dictionary or String or Null) as Void {
+        System.println(Lang.format("Location sent response: $1$", [responseCode]));
+        if (responseCode == 200 && data != null) {
+            System.println(Lang.format("Server response: $1$", [data]));
+        }
+    }
+
     function initialize() {
         AppBase.initialize();
         // Initialize storage array if it doesn't exist
@@ -88,6 +118,9 @@ class BetterWeatherApp extends Application.AppBase {
 
     // onStart() is called on application start up
     function onStart(state as Dictionary?) as Void {
+        // Request GPS position
+        System.println("Requesting GPS position...");
+        Position.enableLocationEvents(Position.LOCATION_ONE_SHOT, method(:onLocationUpdate));
     }
 
     function onUpdate() as Void {

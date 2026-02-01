@@ -17,6 +17,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy application files
 COPY ftpscraper.py .
+COPY api_server.py .
 
 # Create images directory
 RUN mkdir -p images
@@ -26,6 +27,16 @@ RUN echo 'server {\n\
     listen 80;\n\
     server_name _;\n\
     root /app;\n\
+    \n\
+    # Proxy API requests to Flask\n\
+    location /api/ {\n\
+        proxy_pass http://127.0.0.1:5000/api/;\n\
+        proxy_set_header Host $host;\n\
+        proxy_set_header X-Real-IP $remote_addr;\n\
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;\n\
+    }\n\
+    \n\
+    # Serve radar images\n\
     location /images/ {\n\
         alias /app/images/;\n\
         autoindex off;\n\
@@ -38,6 +49,16 @@ RUN echo '[supervisord]\n\
 nodaemon=true\n\
 user=root\n\
 \n\
+[program:api_server]\n\
+command=python /app/api_server.py\n\
+autostart=true\n\
+autorestart=true\n\
+stdout_logfile=/dev/stdout\n\
+stdout_logfile_maxbytes=0\n\
+stderr_logfile=/dev/stderr\n\
+stderr_logfile_maxbytes=0\n\
+priority=1\n\
+\n\
 [program:ftpscraper]\n\
 command=python /app/ftpscraper.py\n\
 autostart=true\n\
@@ -46,6 +67,7 @@ stdout_logfile=/dev/stdout\n\
 stdout_logfile_maxbytes=0\n\
 stderr_logfile=/dev/stderr\n\
 stderr_logfile_maxbytes=0\n\
+priority=2\n\
 \n\
 [program:nginx]\n\
 command=nginx -g "daemon off;"\n\
@@ -55,6 +77,7 @@ stdout_logfile=/dev/stdout\n\
 stdout_logfile_maxbytes=0\n\
 stderr_logfile=/dev/stderr\n\
 stderr_logfile_maxbytes=0\n\
+priority=3\n\
 ' > /etc/supervisor/conf.d/supervisord.conf
 
 # Create a stub updateDNS.sh script (since the original is not in the repo)
