@@ -182,10 +182,12 @@ def serve_image(radar_id, index):
     try:
         # Validate radar_id
         if radar_id not in RADAR_STATIONS:
+            print(f'Invalid radar ID requested: {radar_id}', flush=True)
             return jsonify({'status': 'error', 'message': 'Invalid radar ID'}), 400
 
         # Validate index
         if index < 0 or index >= 7:
+            print(f'Invalid image index requested: {index}', flush=True)
             return jsonify({'status': 'error', 'message': 'Invalid image index'}), 400
 
         image_path = f'/app/images/{radar_id}-{index}.png'
@@ -193,14 +195,15 @@ def serve_image(radar_id, index):
         # If image exists, serve it
         if os.path.exists(image_path):
             from flask import send_file
+            print(f'Serving existing image: {radar_id}-{index}.png', flush=True)
             return send_file(image_path, mimetype='image/png')
 
         # Image doesn't exist - check if all images for this radar need generation
-        print(f'Image {radar_id}-{index}.png not found, checking if generation needed...')
+        print(f'Image {radar_id}-{index}.png not found, checking if generation needed...', flush=True)
         all_exist = all(os.path.exists(f'/app/images/{radar_id}-{i}.png') for i in range(7))
 
         if not all_exist and radar_id not in generation_locks:
-            print(f'Generating images for {radar_id}...')
+            print(f'Starting synchronous generation for {radar_id}...', flush=True)
             generation_locks[radar_id] = True
 
             # Generate synchronously for first request
@@ -208,26 +211,28 @@ def serve_image(radar_id, index):
                 from ftpscraper import GenerateImagesForRadar
                 success = GenerateImagesForRadar(radar_id, 7)
                 if success and os.path.exists(image_path):
-                    print(f'Generated and serving {radar_id}-{index}.png')
+                    print(f'Generated and serving {radar_id}-{index}.png', flush=True)
                     from flask import send_file
                     return send_file(image_path, mimetype='image/png')
                 else:
-                    print(f'Generation failed or image still missing')
+                    print(f'Generation failed or image still missing for {radar_id}', flush=True)
                     return jsonify({'status': 'error', 'message': 'Image generation failed'}), 500
             except Exception as e:
-                print(f'Error generating images: {e}')
+                print(f'Error generating images for {radar_id}: {e}', flush=True)
                 return jsonify({'status': 'error', 'message': str(e)}), 500
             finally:
                 if radar_id in generation_locks:
                     del generation_locks[radar_id]
         elif radar_id in generation_locks:
             # Currently generating, ask client to retry
+            print(f'Image {radar_id}-{index}.png still generating, returning 202', flush=True)
             return jsonify({'status': 'generating', 'message': 'Images are being generated, please retry'}), 202
         else:
+            print(f'Image {radar_id}-{index}.png not found and cannot generate', flush=True)
             return jsonify({'status': 'error', 'message': 'Image not found'}), 404
 
     except Exception as e:
-        print(f'Error serving image: {e}')
+        print(f'Error serving image {radar_id}-{index}: {e}', flush=True)
         return jsonify({'status': 'error', 'message': str(e)}), 500
 
 @app.route('/api/health', methods=['GET'])

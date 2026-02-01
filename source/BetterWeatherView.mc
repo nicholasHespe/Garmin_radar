@@ -119,15 +119,6 @@ class CustomTimeRing extends WatchUi.Drawable {
             dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_TRANSPARENT);
             dc.drawText(120, 120, Graphics.FONT_SMALL, Lang.format("Error: $1$", [$.img_request_response]), Graphics.TEXT_JUSTIFY_CENTER);
         }
-
-        // Show GPS acquiring overlay if GPS not acquired or radar ID not received
-        if (!$.gps_acquired || !$.radar_id_received) {
-            dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_TRANSPARENT);
-            dc.fillRectangle(40, 200, 160, 30);
-            dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
-            dc.drawRectangle(40, 200, 160, 30);
-            dc.drawText(120, 160, Graphics.FONT_TINY, "Acquiring GPS...", Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER);
-        }
     }
     
     // function onUpdate(dc) as Void {

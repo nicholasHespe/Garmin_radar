@@ -292,6 +292,7 @@ def CombineImages(num: int, cols: int):
 
 # Configuration
 RADAR_ID = 'IDR133'  # Default radar station (can be changed based on GPS)
+SYDNEY_RADAR_ID = 'IDR063'  # Pre-generate Sydney for watch app
 image_count = 7
 composite_bg_path = 'composite_background.png'
 
@@ -306,7 +307,7 @@ with FTP("ftp.bom.gov.au") as ftp:
     ftp.login()
 
     # Download and create background
-    print('\n[1/2] Setting up background layers...')
+    print('\n[1/3] Setting up background layers...')
     transparency_layers = DownloadTransparencies(RADAR_ID)
     if transparency_layers:
         CreateCompositeBackground(transparency_layers, composite_bg_path)
@@ -314,9 +315,21 @@ with FTP("ftp.bom.gov.au") as ftp:
         print('Warning: No transparency layers downloaded, radar will have no background')
 
     # Populate image buffer with most recent radar data
-    print('\n[2/2] Populating image buffer...')
+    print('\n[2/3] Populating image buffer...')
     ftp.cwd("/anon/gen/radar")
     InitializeImageBuffer(RADAR_ID, image_count, composite_bg_path)
+
+# Pre-generate Sydney (IDR063) images for watch app
+print('\n[3/3] Pre-generating Sydney (IDR063) images for watch app...')
+sydney_images_exist = all(os.path.exists(f'images/{SYDNEY_RADAR_ID}-{i}.png') for i in range(7))
+if not sydney_images_exist:
+    success = GenerateImagesForRadar(SYDNEY_RADAR_ID, 7)
+    if success:
+        print(f'Successfully pre-generated {SYDNEY_RADAR_ID} images')
+    else:
+        print(f'Warning: Failed to pre-generate {SYDNEY_RADAR_ID} images')
+else:
+    print(f'{SYDNEY_RADAR_ID} images already exist, skipping generation')
 
 print('='*50)
 print('Initialization complete! Starting continuous updates...\n')

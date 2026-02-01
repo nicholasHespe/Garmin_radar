@@ -5,19 +5,14 @@ import Toybox.Time;
 import Toybox.Application.Storage;
 import Toybox.Communications;
 import Toybox.Timer;
-import Toybox.Position;
 using Toybox.System;
 
 const IMG_NUM = 7;
 var img_request_response = 200;
 var imgs_remaining = IMG_NUM-1;
 
-// GPS and radar state
-var current_radar_id = "IDR063";  // Default to Sydney
-var gps_acquired = false;
-var radar_id_received = false;
-
-var URL_FORMAT = "http://betterweather.nickhespe.com/images/$1$-$2$.png";  // radar_id-index
+var current_radar_id = "IDR063";  // Sydney radar
+var URL_FORMAT = "http://betterweather.nickhespe.com/images/$1$-$2$.png";
 
 var imgs_template = new Array<Null or WatchUi.BitmapResource>[IMG_NUM];
 
@@ -59,15 +54,14 @@ class BetterWeatherApp extends Application.AppBase {
             }
         }
     }
-    
+
     function MakeRequest(url as String) {
-        var parameters = null;                                  // set the parameters
-        var options = {                                         // set the options
+        var parameters = null;
+        var options = {
             :dithering => Communications.IMAGE_DITHERING_NONE,
             :packingFormat => Communications.PACKING_FORMAT_YUV
         };
 
-        // Make the image request
         System.println(Lang.format("Requesting Image: $1$",[url]));
         Communications.makeImageRequest(url, parameters, options, method(:onImageReceived));
     }
@@ -77,83 +71,8 @@ class BetterWeatherApp extends Application.AppBase {
         MakeRequest( Lang.format(URL_FORMAT, [current_radar_id, imgs_remaining]) );
     }
 
-    function onLocationUpdate(info as Position.Info) as Void {
-        if (info has :position && info.position != null) {
-            var pos = info.position.toDegrees();
-            var lat = pos[0];
-            var lon = pos[1];
-            System.println(Lang.format("GPS Location: $1$, $2$", [lat, lon]));
-            gps_acquired = true;
-            SendLocationToServer(lat, lon);
-        } else {
-            System.println("GPS position unavailable, using default Sydney radar");
-            gps_acquired = true;
-            radar_id_received = true;
-            WatchUi.requestUpdate();
-        }
-    }
-
-    function SendLocationToServer(lat as Double, lon as Double) as Void {
-        var url = Lang.format("http://betterweather.nickhespe.com/api/location?lat=$1$&lon=$2$", [lat, lon]);
-        var params = {};
-        var options = {
-            :method => Communications.HTTP_REQUEST_METHOD_GET,
-            :responseType => Communications.HTTP_RESPONSE_CONTENT_TYPE_JSON
-        };
-
-        System.println(Lang.format("Sending GPS to server: $1$", [url]));
-        Communications.makeWebRequest(url, params, options, method(:onLocationSent));
-    }
-
-    function onLocationSent(responseCode as Number, data as Dictionary or String or Null) as Void {
-        System.println(Lang.format("Location sent response: $1$", [responseCode]));
-        if (responseCode == 200 && data != null && data instanceof Dictionary) {
-            System.println(Lang.format("Server response: $1$", [data]));
-
-            // Extract radar_id from response
-            var new_radar_id = data.get("radar_id");
-            if (new_radar_id != null && new_radar_id instanceof String) {
-                System.println(Lang.format("Received radar ID: $1$", [new_radar_id]));
-
-                var radar_changed = !new_radar_id.equals(current_radar_id);
-                var first_time = !radar_id_received;
-
-                // Update radar if changed or first time
-                if (radar_changed || first_time) {
-                    if (radar_changed) {
-                        System.println(Lang.format("Radar changed from $1$ to $2$, re-downloading images", [current_radar_id, new_radar_id]));
-                    } else {
-                        System.println(Lang.format("First radar ID received: $1$, starting download", [new_radar_id]));
-                    }
-
-                    current_radar_id = new_radar_id;
-                    Storage.setValue("radar_id", current_radar_id);
-
-                    // Clear existing images and re-download
-                    var imgs = new Array<Null or WatchUi.BitmapResource>[IMG_NUM];
-                    for(var i = 0; i < IMG_NUM; i++) {
-                        imgs[i] = null;
-                    }
-                    Storage.setValue("radar_imgaes", imgs);
-                    GetImages();
-                }
-
-                radar_id_received = true;
-                WatchUi.requestUpdate();
-            }
-        }
-    }
-
     function initialize() {
         AppBase.initialize();
-
-        // Load saved radar_id if available
-        var saved_radar_id = Storage.getValue("radar_id");
-        if (saved_radar_id != null && saved_radar_id instanceof String) {
-            current_radar_id = saved_radar_id;
-            radar_id_received = true;  // We have a cached radar ID
-            System.println(Lang.format("Loaded saved radar ID: $1$", [current_radar_id]));
-        }
 
         // Initialize storage array if it doesn't exist
         var imgs = Storage.getValue("radar_imgaes");
@@ -166,60 +85,18 @@ class BetterWeatherApp extends Application.AppBase {
             System.println("Initialized radar images array");
         }
 
-        // Only start downloading if we have a cached radar_id
-        // Otherwise, wait for GPS to provide one
-        if (radar_id_received) {
-            System.println("Using cached radar, starting download");
-            GetImages();
-        } else {
-            System.println("No cached radar, waiting for GPS");
-        }
-    }
-
-    function CheckServerHealth() as Void {
-        var url = "http://betterweather.nickhespe.com/api/health";
-        var params = {};
-        var options = {
-            :method => Communications.HTTP_REQUEST_METHOD_GET,
-            :responseType => Communications.HTTP_RESPONSE_CONTENT_TYPE_JSON
-        };
-
-        System.println("Checking server health...");
-        Communications.makeWebRequest(url, params, options, method(:onHealthCheckComplete));
-    }
-
-    function onHealthCheckComplete(responseCode as Number, data as Dictionary or String or Null) as Void {
-        System.println(Lang.format("Health check response: $1$", [responseCode]));
-        if (responseCode == 200) {
-            System.println("Server is reachable!");
-            if (data != null) {
-                System.println(Lang.format("Health check data: $1$", [data]));
-            }
-        } else {
-            System.println(Lang.format("Server health check failed with code: $1$", [responseCode]));
-        }
+        // Start downloading immediately
+        System.println("Starting image download for Sydney (IDR063)");
+        GetImages();
     }
 
     // onStart() is called on application start up
     function onStart(state as Dictionary?) as Void {
-        // Test API connectivity first
-        CheckServerHealth();
-
-        // Request GPS position
-        System.println("Requesting GPS position...");
-        Position.enableLocationEvents(Position.LOCATION_CONTINUOUS, method(:onLocationUpdate));
-    }
-
-    function onUpdate() as Void {
-        System.println("hey");
-        if (imgs_remaining == IMG_NUM-1){
-            MakeRequest( Lang.format(URL_FORMAT, [current_radar_id, imgs_remaining]) );
-        }
     }
 
     // onStop() is called when your application is exiting
     function onStop(state as Dictionary?) as Void {
-    }   
+    }
 
     // Return the initial view of your application here
     function getInitialView() as Array<Views or InputDelegates>? {
@@ -230,7 +107,3 @@ class BetterWeatherApp extends Application.AppBase {
 function getApp() as BetterWeatherApp {
     return Application.getApp() as BetterWeatherApp;
 }
-
-
-
-
