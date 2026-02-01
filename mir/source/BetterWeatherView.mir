@@ -526,7 +526,7 @@ D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherView_mc_124_53_start:
         %tmp.228 = lgetv %dc;
         %tmp.229 = getv function %tmp.228 :drawText;
         %tmp.230 = 120;
-        %tmp.231 = 215;
+        %tmp.231 = 160;
         %tmp.232 = getm $.Toybox.Graphics;
         %tmp.233 = getv %tmp.232 :FONT_TINY;
         %tmp.234 = "Acquiring GPS...";

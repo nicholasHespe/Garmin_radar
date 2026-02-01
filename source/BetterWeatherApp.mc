@@ -176,11 +176,38 @@ class BetterWeatherApp extends Application.AppBase {
         }
     }
 
+    function CheckServerHealth() as Void {
+        var url = "http://betterweather.nickhespe.com/api/health";
+        var params = {};
+        var options = {
+            :method => Communications.HTTP_REQUEST_METHOD_GET,
+            :responseType => Communications.HTTP_RESPONSE_CONTENT_TYPE_JSON
+        };
+
+        System.println("Checking server health...");
+        Communications.makeWebRequest(url, params, options, method(:onHealthCheckComplete));
+    }
+
+    function onHealthCheckComplete(responseCode as Number, data as Dictionary or String or Null) as Void {
+        System.println(Lang.format("Health check response: $1$", [responseCode]));
+        if (responseCode == 200) {
+            System.println("Server is reachable!");
+            if (data != null) {
+                System.println(Lang.format("Health check data: $1$", [data]));
+            }
+        } else {
+            System.println(Lang.format("Server health check failed with code: $1$", [responseCode]));
+        }
+    }
+
     // onStart() is called on application start up
     function onStart(state as Dictionary?) as Void {
+        // Test API connectivity first
+        CheckServerHealth();
+
         // Request GPS position
         System.println("Requesting GPS position...");
-        Position.enableLocationEvents(Position.LOCATION_ONE_SHOT, method(:onLocationUpdate));
+        Position.enableLocationEvents(Position.LOCATION_CONTINUOUS, method(:onLocationUpdate));
     }
 
     function onUpdate() as Void {
