@@ -219,13 +219,9 @@ def GenerateImagesForRadar(radar_id: str, num_images: int = 7) -> bool:
                     # Crop and resize
                     CropAndResize(filename)
 
-                    # Composite with background
-                    temp_output = 'temp_radar_composite.png'
-                    CompositeRadarOnBackground(filename, composite_bg_path, temp_output)
-
-                    # Save with radar-specific naming
+                    # Composite with background - save directly to final location
                     output_name = f'images/{radar_id}-{idx}.png'
-                    os.rename(temp_output, output_name)
+                    CompositeRadarOnBackground(filename, composite_bg_path, output_name)
                     os.remove(filename)
 
                     downloaded_count += 1
