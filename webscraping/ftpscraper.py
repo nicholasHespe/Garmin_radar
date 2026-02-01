@@ -99,6 +99,68 @@ def CompositeRadarOnBackground(radar_image_path: str, background_path: str, outp
     final.save(output_path, 'PNG')
     return output_path
 
+def GetRecentRadarFiles(radar_id: str, count: int = 7) -> list:
+    """Find the most recent radar files on FTP server"""
+    print(f'Scanning for recent {radar_id} radar files...')
+
+    try:
+        # List all files in radar directory
+        files = []
+        ftp.retrlines('NLST', files.append)
+
+        # Filter for our radar ID and sort by timestamp (filename contains timestamp)
+        radar_files = [f for f in files if f.startswith(f'{radar_id}.T.') and f.endswith('.png')]
+        radar_files.sort(reverse=True)  # Most recent first
+
+        # Get the requested number of most recent files
+        recent_files = radar_files[:count]
+        print(f'Found {len(recent_files)} recent files')
+
+        return recent_files
+    except Exception as e:
+        print(f'Error listing radar files: {e}')
+        return []
+
+def InitializeImageBuffer(radar_id: str, num_images: int, composite_bg_path: str):
+    """Download most recent radar images to populate buffer on startup"""
+    print(f'Initializing image buffer with {num_images} most recent images...')
+
+    # Get most recent radar files from FTP
+    recent_files = GetRecentRadarFiles(radar_id, num_images)
+
+    if not recent_files:
+        print('Warning: No radar files found on FTP server')
+        return False
+
+    # Download and process each file
+    downloaded_count = 0
+    for filename in reversed(recent_files):  # Oldest to newest
+        if DownloadFile(filename):
+            # Crop and resize
+            CropAndResize(filename)
+
+            # Composite with background if available
+            if os.path.exists(composite_bg_path):
+                temp_output = 'temp_radar_composite.png'
+                CompositeRadarOnBackground(filename, composite_bg_path, temp_output)
+                os.remove(filename)
+                os.rename(temp_output, filename)
+
+            # Add to rolling buffer
+            UpdateImageNames(filename, num_images)
+            downloaded_count += 1
+            os.remove(filename)
+        else:
+            print(f'Failed to download {filename}')
+
+    print(f'Initialized buffer with {downloaded_count} images')
+
+    # Create composite grid
+    if downloaded_count > 0:
+        CombineImages(num_images, 3)
+
+    return downloaded_count > 0
+
 def UpdateImageNames(fn: str, num: int):
     new_img = Image.open(fn)
     img_list = []
@@ -145,19 +207,35 @@ def CombineImages(num: int, cols: int):
 
 
 # Configuration
-RADAR_ID = 'IDR714'  # Default radar station (can be changed based on GPS)
+RADAR_ID = 'IDR031'  # Default radar station (can be changed based on GPS)
 image_count = 7
 composite_bg_path = 'composite_background.png'
 
+# Ensure images directory exists
+Path('images').mkdir(exist_ok=True)
+
 # Initialize: Download transparency layers and create composite background
 print(f'Starting BetterWeather radar server for {RADAR_ID}...')
+print('='*50)
+
 with FTP("ftp.bom.gov.au") as ftp:
     ftp.login()
+
+    # Download and create background
+    print('\n[1/2] Setting up background layers...')
     transparency_layers = DownloadTransparencies(RADAR_ID)
     if transparency_layers:
         CreateCompositeBackground(transparency_layers, composite_bg_path)
     else:
         print('Warning: No transparency layers downloaded, radar will have no background')
+
+    # Populate image buffer with most recent radar data
+    print('\n[2/2] Populating image buffer...')
+    ftp.cwd("anon/gen/radar")
+    InitializeImageBuffer(RADAR_ID, image_count, composite_bg_path)
+
+print('='*50)
+print('Initialization complete! Starting continuous updates...\n')
 
 # Main loop: Download radar images and composite with background
 while True:
