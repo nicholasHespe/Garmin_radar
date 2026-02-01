@@ -287,8 +287,8 @@ def CombineImages(num: int, cols: int):
 
 
 # Configuration
-RADAR_ID = 'IDR133'  # Default radar station (can be changed based on GPS)
-SYDNEY_RADAR_ID = 'IDR063'  # Pre-generate Sydney for watch app
+RADAR_ID = 'IDR711'  # Default radar station (can be changed based on GPS)
+SYDNEY_RADAR_ID = 'IDR711'  # Pre-generate Sydney for watch app
 image_count = 7
 composite_bg_path = 'composite_background.png'
 
