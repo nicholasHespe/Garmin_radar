@@ -1,0 +1,13 @@
+IDR232.map
+23 Gladstone (256 km)
+projection = Gnomonic
+center_longitude =     151.26700
+center_latitude  =     -23.85000
+lon0 =     148.71782
+lat0 =     -26.12004
+lon1 =     148.80672
+lat1 =     -21.52112
+lon2 =     153.75119
+lat2 =     -21.52076
+lon3 =     153.84094
+lat3 =     -26.11960

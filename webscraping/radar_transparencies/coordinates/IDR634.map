@@ -1,0 +1,13 @@
+IDR634.map
+63 Darwin (64 km)
+projection = Gnomonic
+center_longitude =     130.92500
+center_latitude  =     -12.45700
+lon0 =     130.33635
+lat0 =     -13.03046
+lon1 =     130.33896
+lat1 =     -11.87832
+lon2 =     131.51631
+lat2 =     -11.87830
+lon3 =     131.51895
+lat3 =     -13.03045

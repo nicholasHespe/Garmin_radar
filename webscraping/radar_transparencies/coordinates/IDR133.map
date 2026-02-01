@@ -1,0 +1,13 @@
+IDR133.map
+13 Sydney Ap (128 km)
+projection = Gnomonic
+center_longitude =     151.17500
+center_latitude  =     -33.94100
+lon0 =     149.77383
+lat0 =     -35.08078
+lon1 =     149.81123
+lat1 =     -32.77730
+lon2 =     152.55124
+lat2 =     -32.77716
+lon3 =     152.58899
+lat3 =     -35.08064

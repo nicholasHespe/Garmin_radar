@@ -1,0 +1,13 @@
+IDR1141.map
+114 Carnarvon (512 km)
+projection = Gnomonic
+center_longitude =     113.66700
+center_latitude  =     -24.88300
+lon0 =     108.41427
+lat0 =     -29.35917
+lon1 =     108.79040
+lat1 =     -20.19112
+lon2 =     118.56644
+lat2 =     -20.19049
+lon3 =     118.94432
+lat3 =     -29.35820

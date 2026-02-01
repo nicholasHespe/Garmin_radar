@@ -72,30 +72,52 @@ class CustomTimeRing extends WatchUi.Drawable {
     }
     
     function draw(dc as Dc) as Void {
-        
-        // var radar_imgaes = Storage.getValue("radar_imgaes");
+        // Clear screen
+        dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_BLACK);
+        dc.clear();
+
         var wp = Storage.getValue("weatherPage");
         var img = null;
         if(Storage.getValue("radar_imgaes")){
             img = Storage.getValue("radar_imgaes")[wp];
         }
 
-        dc.setColor(Graphics.COLOR_BLACK ,Graphics.COLOR_TRANSPARENT );
-        dc.setPenWidth(4);
+        // Check if we have images loaded
+        var hasImages = (img instanceof WatchUi.BitmapResource);
 
-        if($.imgs_remaining != 0){
-            dc.setColor(Graphics.COLOR_DK_RED ,Graphics.COLOR_TRANSPARENT );
-        }        
-        
+        if (!hasImages) {
+            // Show loading screen
+            dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
+            dc.drawText(120, 80, Graphics.FONT_MEDIUM, "BetterWeather", Graphics.TEXT_JUSTIFY_CENTER);
+            dc.drawText(120, 120, Graphics.FONT_SMALL, "Loading radar...", Graphics.TEXT_JUSTIFY_CENTER);
 
-        if( img instanceof WatchUi.BitmapResource){
-            dc.drawBitmap(0,0,img);
-            //dc.drawText(120, 100, Graphics.FONT_MEDIUM, Storage.getValue("radar_imgaes").toString(), Graphics.TEXT_JUSTIFY_CENTER);
+            // Show download progress
+            if($.imgs_remaining >= 0 && $.imgs_remaining < $.IMG_NUM){
+                var progress = (($.IMG_NUM - 1 - $.imgs_remaining) * 100) / $.IMG_NUM;
+                dc.drawText(120, 160, Graphics.FONT_TINY, Lang.format("$1$%", [progress.toNumber()]), Graphics.TEXT_JUSTIFY_CENTER);
+            }
+        } else {
+            // Draw the radar image (now includes background from server)
+            dc.drawBitmap(0, 0, img);
+
+            // Draw progress arc
+            dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
+            dc.setPenWidth(4);
+
+            // Red arc while downloading
+            if($.imgs_remaining != 0){
+                dc.setColor(Graphics.COLOR_DK_RED, Graphics.COLOR_TRANSPARENT);
+            }
+
+            dc.drawArc(120, 120, 120*0.95, Graphics.ARC_CLOCKWISE, 90, (wp*30+89-($.IMG_NUM-1)*30) % 360);
         }
-        dc.drawArc(120,120,120*0.95,Graphics.ARC_CLOCKWISE,90, (wp*30+89-($.IMG_NUM-1)*30) % 360 );
 
-        if($.img_request_response != 200){
-            dc.drawText(120, 120, Graphics.FONT_MEDIUM, Lang.format("Failed request : $1$", [$.img_request_response]), Graphics.TEXT_JUSTIFY_CENTER);    
+        // Show error message if request failed
+        if($.img_request_response != 200 && $.img_request_response != 0){
+            dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_DK_RED);
+            dc.fillRectangle(20, 100, 200, 40);
+            dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_TRANSPARENT);
+            dc.drawText(120, 120, Graphics.FONT_SMALL, Lang.format("Error: $1$", [$.img_request_response]), Graphics.TEXT_JUSTIFY_CENTER);
         }
     }
     

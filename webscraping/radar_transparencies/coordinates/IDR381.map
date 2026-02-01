@@ -1,0 +1,13 @@
+IDR381.map
+38 Newdegate (512 km)
+projection = Gnomonic
+center_longitude =     119.00870
+center_latitude  =     -33.09700
+lon0 =     113.23827
+lat0 =     -37.53964
+lon1 =     113.81002
+lat1 =     -28.37983
+lon2 =     124.23802
+lat2 =     -28.37866
+lon3 =     124.81310
+lat3 =     -37.53798

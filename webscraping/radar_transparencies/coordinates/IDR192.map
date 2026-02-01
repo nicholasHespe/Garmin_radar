@@ -1,0 +1,13 @@
+IDR192.map
+19 Cairns (256 km)
+projection = Gnomonic
+center_longitude =     145.68300
+center_latitude  =     -16.81700
+lon0 =     143.25636
+lat0 =     -19.09775
+lon1 =     143.31459
+lat1 =     -14.49510
+lon2 =     148.06895
+lat2 =     -14.49492
+lon3 =     148.12761
+lat3 =     -19.09752

@@ -1,0 +1,13 @@
+IDR101.map
+10 Darwin Ap (512 km)
+projection = Gnomonic
+center_longitude =     130.89101
+center_latitude  =     -12.42500
+lon0 =     126.11108
+lat0 =     -16.94928
+lon1 =     126.27695
+lat1 =      -7.77387
+lon2 =     135.53857
+lat2 =      -7.77351
+lon3 =     135.70566
+lat3 =     -16.94847

@@ -1,0 +1,13 @@
+IDR143.map
+14 Mt Gambier (128 km)
+projection = Gnomonic
+center_longitude =     140.78000
+center_latitude  =     -37.75000
+lon0 =     139.30644
+lat0 =     -38.88927
+lon1 =     139.35161
+lat1 =     -36.58614
+lon2 =     142.22034
+lat2 =     -36.58600
+lon3 =     142.26587
+lat3 =     -38.88912

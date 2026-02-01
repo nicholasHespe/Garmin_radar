@@ -1,0 +1,13 @@
+IDR162.map
+16 Port Hedland (256 km)
+projection = Gnomonic
+center_longitude =     118.63170
+center_latitude  =     -20.37190
+lon0 =     116.14591
+lat0 =     -22.64471
+lon1 =     116.21893
+lat1 =     -18.04559
+lon2 =     121.05660
+lat2 =     -18.04544
+lon3 =     121.12998
+lat3 =     -22.64452

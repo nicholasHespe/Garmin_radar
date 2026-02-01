@@ -1,0 +1,13 @@
+IDR034.map
+03 Wollongong (64 km)
+projection = Gnomonic
+center_longitude =     150.87390
+center_latitude  =     -34.26390
+lon0 =     150.17569
+lat0 =     -34.83512
+lon1 =     150.18518
+lat1 =     -33.68372
+lon2 =     151.56892
+lat2 =     -33.68369
+lon3 =     151.57851
+lat3 =     -34.83509

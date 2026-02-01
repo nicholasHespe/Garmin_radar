@@ -1,0 +1,13 @@
+IDR112.map
+11 Adelaide Ap (256 km)
+projection = Gnomonic
+center_longitude =     138.53300
+center_latitude  =     -34.95000
+lon0 =     135.65929
+lat0 =     -37.20820
+lon1 =     135.81596
+lat1 =     -32.61355
+lon2 =     141.27335
+lat2 =     -32.61304
+lon3 =     141.43137
+lat3 =     -37.20760

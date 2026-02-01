@@ -1,0 +1,13 @@
+IDR522.map
+52 NW Tasmania (256 km)
+projection = Gnomonic
+center_longitude =     145.57899
+center_latitude  =     -41.18100
+lon0 =     142.42165
+lat0 =     -43.43339
+lon1 =     142.63583
+lat1 =     -38.83426
+lon2 =     148.54457
+lat2 =     -38.83369
+lon3 =     148.76039
+lat3 =     -43.43273

@@ -1,0 +1,13 @@
+IDR971.map
+97 Mildura (512 km)
+projection = Gnomonic
+center_longitude =     141.59821
+center_latitude  =     -34.28710
+lon0 =     135.73691
+lat0 =     -38.72258
+lon1 =     136.34262
+lat1 =     -29.56888
+lon2 =     146.88579
+lat2 =     -29.56762
+lon3 =     147.49513
+lat3 =     -38.72079

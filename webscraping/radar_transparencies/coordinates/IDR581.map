@@ -1,0 +1,13 @@
+IDR581.map
+58 South Doodlakine (512 km)
+projection = Gnomonic
+center_longitude =     117.95290
+center_latitude  =     -31.77700
+lon0 =     112.28999
+lat0 =     -36.22741
+lon1 =     112.82485
+lat1 =     -27.06275
+lon2 =     123.13119
+lat2 =     -27.06091
+lon3 =     123.67123
+lat3 =     -36.22478

@@ -1,0 +1,13 @@
+IDR371.map
+37 Hobart (512 km)
+projection = Gnomonic
+center_longitude =     147.50999
+center_latitude  =     -42.83300
+lon0 =     140.77664
+lat0 =     -47.21679
+lon1 =     141.70419
+lat1 =     -38.07198
+lon2 =     153.35948
+lat2 =     -38.06982
+lon3 =     154.29390
+lat3 =     -47.21380

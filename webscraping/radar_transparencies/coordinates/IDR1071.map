@@ -1,0 +1,13 @@
+IDR1071.map
+107 Richmond (512 km)
+projection = Gnomonic
+center_longitude =     143.14145
+center_latitude  =     -20.75178
+lon0 =     138.08452
+lat0 =     -25.24487
+lon1 =     138.38258
+lat1 =     -16.06786
+lon2 =     147.93732
+lat2 =     -16.06704
+lon3 =     148.23769
+lat3 =     -25.24352

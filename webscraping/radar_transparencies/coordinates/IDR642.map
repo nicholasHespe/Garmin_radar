@@ -1,0 +1,13 @@
+IDR642.map
+64 Adelaide (256 km)
+projection = Gnomonic
+center_longitude =     138.46899
+center_latitude  =     -34.61700
+lon0 =     135.60454
+lat0 =     -36.87908
+lon1 =     135.75908
+lat1 =     -32.27723
+lon2 =     141.20459
+lat2 =     -32.27667
+lon3 =     141.36058
+lat3 =     -36.87843

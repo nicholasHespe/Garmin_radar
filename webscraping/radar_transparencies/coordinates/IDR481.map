@@ -1,0 +1,13 @@
+IDR481.map
+48 Kalgoorlie (512 km)
+projection = Gnomonic
+center_longitude =     121.45490
+center_latitude  =     -30.78340
+lon0 =     115.86895
+lat0 =     -35.24076
+lon1 =     116.37759
+lat1 =     -26.06976
+lon2 =     126.58185
+lat2 =     -26.06801
+lon3 =     127.09541
+lat3 =     -35.23824

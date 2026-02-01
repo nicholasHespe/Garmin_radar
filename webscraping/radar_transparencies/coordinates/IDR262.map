@@ -1,0 +1,13 @@
+IDR262.map
+26 Perth Ap (256 km)
+projection = Gnomonic
+center_longitude =     115.96700
+center_latitude  =     -31.93300
+lon0 =     113.19778
+lat0 =     -34.19931
+lon1 =     113.33298
+lat1 =     -29.59904
+lon2 =     118.62571
+lat2 =     -29.59855
+lon3 =     118.76218
+lat3 =     -34.19873

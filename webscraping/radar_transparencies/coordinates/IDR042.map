@@ -1,0 +1,13 @@
+IDR042.map
+04 Newcastle (256 km)
+projection = Gnomonic
+center_longitude =     152.02499
+center_latitude  =     -32.73170
+lon0 =     149.22809
+lat0 =     -34.98953
+lon1 =     149.36880
+lat1 =     -30.38918
+lon2 =     154.70403
+lat2 =     -30.38872
+lon3 =     154.84595
+lat3 =     -34.98898

@@ -1,0 +1,13 @@
+IDR721.map
+72 Emerald (512 km)
+projection = Gnomonic
+center_longitude =     148.23900
+center_latitude  =     -23.54980
+lon0 =     143.05339
+lat0 =     -28.03490
+lon1 =     143.40323
+lat1 =     -18.86301
+lon2 =     153.10231
+lat2 =     -18.86230
+lon3 =     153.45413
+lat3 =     -28.03379

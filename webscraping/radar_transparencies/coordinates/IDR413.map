@@ -1,0 +1,13 @@
+IDR413.map
+41 Willis Is (128 km)
+projection = Gnomonic
+center_longitude =     149.98300
+center_latitude  =     -16.30000
+lon0 =     148.78149
+lat0 =     -17.44267
+lon1 =     148.79552
+lat1 =     -15.14193
+lon2 =     151.17905
+lat2 =     -15.14189
+lon3 =     151.19318
+lat3 =     -17.44262

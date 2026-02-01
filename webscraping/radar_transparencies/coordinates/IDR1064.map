@@ -1,0 +1,13 @@
+IDR1064.map
+106 Townsville (64 km)
+projection = Gnomonic
+center_longitude =     146.55110
+center_latitude  =     -19.41960
+lon0 =     145.94077
+lat0 =     -19.99237
+lon1 =     145.94507
+lat1 =     -18.84061
+lon2 =     147.16205
+lat2 =     -18.84060
+lon3 =     147.16640
+lat3 =     -19.99236

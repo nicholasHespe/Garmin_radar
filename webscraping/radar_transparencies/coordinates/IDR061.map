@@ -1,0 +1,13 @@
+IDR061.map
+06 Geraldton (512 km)
+projection = Gnomonic
+center_longitude =     114.70000
+center_latitude  =     -28.80000
+lon0 =     109.23124
+lat0 =     -33.26068
+lon1 =     109.69218
+lat1 =     -24.09469
+lon2 =     119.74432
+lat2 =     -24.09350
+lon3 =     120.20858
+lat3 =     -33.25893

@@ -1,0 +1,13 @@
+IDR241.map
+24 Bowen (512 km)
+projection = Gnomonic
+center_longitude =     148.07500
+center_latitude  =     -19.88600
+lon0 =     143.05873
+lat0 =     -24.38918
+lon1 =     143.34135
+lat1 =     -15.21342
+lon2 =     152.85452
+lat2 =     -15.21245
+lon3 =     153.13988
+lat3 =     -24.38757

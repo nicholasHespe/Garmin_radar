@@ -1,0 +1,13 @@
+IDR171.map
+17 Broome (512 km)
+projection = Gnomonic
+center_longitude =     122.22500
+center_latitude  =     -17.94500
+lon0 =     117.27460
+lat0 =     -22.45821
+lon1 =     117.52534
+lat1 =     -13.27244
+lon2 =     126.96640
+lat2 =     -13.27166
+lon3 =     127.21934
+lat3 =     -22.45686

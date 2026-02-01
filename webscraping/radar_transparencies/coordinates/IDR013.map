@@ -1,0 +1,13 @@
+IDR013.map
+01 Broadmeadows (128 km)
+projection = Gnomonic
+center_longitude =     144.94600
+center_latitude  =     -37.69100
+lon0 =     143.47455
+lat0 =     -38.82983
+lon1 =     143.51955
+lat1 =     -36.52673
+lon2 =     146.38603
+lat2 =     -36.52657
+lon3 =     146.43146
+lat3 =     -38.82965

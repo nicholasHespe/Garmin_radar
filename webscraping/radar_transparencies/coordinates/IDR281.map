@@ -1,0 +1,13 @@
+IDR281.map
+28 Grafton (512 km)
+projection = Gnomonic
+center_longitude =     152.95100
+center_latitude  =     -29.62200
+lon0 =     147.42630
+lat0 =     -34.07846
+lon1 =     147.90739
+lat1 =     -24.90847
+lon2 =     158.03006
+lat2 =     -24.90727
+lon3 =     158.51448
+lat3 =     -34.07671

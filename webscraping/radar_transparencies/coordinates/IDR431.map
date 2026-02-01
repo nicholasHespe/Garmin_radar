@@ -1,0 +1,13 @@
+IDR431.map
+43 Brisbane Ap (512 km)
+projection = Gnomonic
+center_longitude =     153.13000
+center_latitude  =     -27.39200
+lon0 =     147.74312
+lat0 =     -31.86772
+lon1 =     148.17256
+lat1 =     -22.69266
+lon2 =     158.12740
+lat2 =     -22.69142
+lon3 =     158.56026
+lat3 =     -31.86588

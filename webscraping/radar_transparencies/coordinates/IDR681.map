@@ -1,0 +1,13 @@
+IDR681.map
+68 Bairnsdale (512 km)
+projection = Gnomonic
+center_longitude =     147.57550
+center_latitude  =     -37.88760
+lon0 =     141.40080
+lat0 =     -42.29967
+lon1 =     142.12306
+lat1 =     -33.15343
+lon2 =     153.07320
+lat2 =     -33.15144
+lon3 =     153.80135
+lat3 =     -42.29690

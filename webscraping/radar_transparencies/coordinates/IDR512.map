@@ -1,0 +1,13 @@
+IDR512.map
+51 Melbourne Ap (256 km)
+projection = Gnomonic
+center_longitude =     144.83000
+center_latitude  =     -37.66700
+lon0 =     141.83836
+lat0 =     -39.91902
+lon1 =     142.01816
+lat1 =     -35.31990
+lon2 =     147.65814
+lat2 =     -35.31952
+lon3 =     147.83897
+lat3 =     -39.91857

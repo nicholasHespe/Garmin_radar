@@ -1,0 +1,13 @@
+IDR421.map
+42 Katherine (512 km)
+projection = Gnomonic
+center_longitude =     132.44600
+center_latitude  =     -14.51300
+lon0 =     127.60093
+lat0 =     -19.03718
+lon1 =     127.79807
+lat1 =      -9.85272
+lon2 =     137.12187
+lat2 =      -9.85233
+lon3 =     137.32018
+lat3 =     -19.03641

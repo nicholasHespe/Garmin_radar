@@ -1,0 +1,13 @@
+IDR692.map
+69 Namoi (256 km)
+projection = Gnomonic
+center_longitude =     150.19150
+center_latitude  =     -31.02400
+lon0 =     147.45337
+lat0 =     -33.28439
+lon1 =     147.58247
+lat1 =     -28.68403
+lon2 =     152.82822
+lat2 =     -28.68349
+lon3 =     152.95869
+lat3 =     -33.28375

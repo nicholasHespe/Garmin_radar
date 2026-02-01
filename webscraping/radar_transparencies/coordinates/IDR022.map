@@ -1,0 +1,13 @@
+IDR022.map
+02 Melbourne (256 km)
+projection = Gnomonic
+center_longitude =     144.75200
+center_latitude  =     -37.85200
+lon0 =     141.75253
+lat0 =     -40.10854
+lon1 =     141.93401
+lat1 =     -35.50883
+lon2 =     147.58801
+lat2 =     -35.50841
+lon3 =     147.77065
+lat3 =     -40.10805

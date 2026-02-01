@@ -1,0 +1,13 @@
+IDR153.map
+15 Dampier (128 km)
+projection = Gnomonic
+center_longitude =     116.68700
+center_latitude  =     -20.65000
+lon0 =     115.45045
+lat0 =     -21.79330
+lon1 =     115.46904
+lat1 =     -19.49057
+lon2 =     117.91183
+lat2 =     -19.49052
+lon3 =     117.93053
+lat3 =     -21.79325

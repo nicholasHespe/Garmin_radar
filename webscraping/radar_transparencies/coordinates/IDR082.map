@@ -1,0 +1,13 @@
+IDR082.map
+08 Gympie (256 km)
+projection = Gnomonic
+center_longitude =     152.58299
+center_latitude  =     -25.96700
+lon0 =     149.98151
+lat0 =     -28.23606
+lon1 =     150.08131
+lat1 =     -23.63470
+lon2 =     155.10512
+lat2 =     -23.63437
+lon3 =     155.20573
+lat3 =     -28.23566

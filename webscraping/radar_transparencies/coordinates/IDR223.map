@@ -1,0 +1,13 @@
+IDR223.map
+22 Mackay (128 km)
+projection = Gnomonic
+center_longitude =     149.21700
+center_latitude  =     -21.11700
+lon0 =     147.98015
+lat0 =     -22.26065
+lon1 =     147.99919
+lat1 =     -19.95892
+lon2 =     150.44810
+lat2 =     -19.95883
+lon3 =     150.46735
+lat3 =     -22.26055

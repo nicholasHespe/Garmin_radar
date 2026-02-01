@@ -1,0 +1,13 @@
+IDR701.map
+70 Perth (512 km)
+projection = Gnomonic
+center_longitude =     115.86690
+center_latitude  =     -32.39170
+lon0 =     110.14799
+lat0 =     -36.83435
+lon1 =     110.70027
+lat1 =     -27.67404
+lon2 =     121.05975
+lat2 =     -27.67307
+lon3 =     121.61480
+lat3 =     -36.83296

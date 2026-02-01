@@ -1,0 +1,13 @@
+IDR323.map
+32 Esperance (128 km)
+projection = Gnomonic
+center_longitude =     121.89200
+center_latitude  =     -33.83000
+lon0 =     120.49162
+lat0 =     -34.96922
+lon1 =     120.52882
+lat1 =     -32.66727
+lon2 =     123.26363
+lat2 =     -32.66718
+lon3 =     123.30106
+lat3 =     -34.96912

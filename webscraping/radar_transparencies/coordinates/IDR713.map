@@ -1,0 +1,13 @@
+IDR713.map
+71 Sydney (128 km)
+projection = Gnomonic
+center_longitude =     151.20950
+center_latitude  =     -33.70080
+lon0 =     149.81175
+lat0 =     -34.83832
+lon1 =     149.84869
+lat1 =     -32.53770
+lon2 =     152.57796
+lat2 =     -32.53762
+lon3 =     152.61510
+lat3 =     -34.83823

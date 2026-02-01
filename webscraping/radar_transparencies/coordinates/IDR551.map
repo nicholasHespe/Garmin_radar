@@ -1,0 +1,13 @@
+IDR551.map
+55 Wagga Wagga (512 km)
+projection = Gnomonic
+center_longitude =     147.46700
+center_latitude  =     -35.16700
+lon0 =     141.52844
+lat0 =     -39.60157
+lon1 =     142.16196
+lat1 =     -30.44072
+lon2 =     152.80782
+lat2 =     -30.43926
+lon3 =     153.44553
+lat3 =     -39.59952

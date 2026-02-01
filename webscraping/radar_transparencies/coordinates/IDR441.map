@@ -1,0 +1,13 @@
+IDR441.map
+44 Giles (512 km)
+projection = Gnomonic
+center_longitude =     128.30000
+center_latitude  =     -25.03000
+lon0 =     123.04176
+lat0 =     -29.51744
+lon1 =     123.42094
+lat1 =     -20.34460
+lon2 =     133.21193
+lat2 =     -20.34368
+lon3 =     133.59366
+lat3 =     -29.51603

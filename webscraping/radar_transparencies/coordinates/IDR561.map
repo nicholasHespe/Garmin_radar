@@ -1,0 +1,13 @@
+IDR561.map
+56 Longreach (512 km)
+projection = Gnomonic
+center_longitude =     144.28999
+center_latitude  =     -23.43000
+lon0 =     139.11729
+lat0 =     -27.91767
+lon1 =     139.46429
+lat1 =     -18.74736
+lon2 =     149.15489
+lat2 =     -18.74635
+lon3 =     149.50467
+lat3 =     -27.91609

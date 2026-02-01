@@ -1,0 +1,13 @@
+IDR623.map
+62 Norfolk Is (128 km)
+projection = Gnomonic
+center_longitude =     167.94000
+center_latitude  =     -29.04000
+lon0 =     166.61417
+lat0 =     -30.18128
+lon1 =     166.64342
+lat1 =     -27.87899
+lon2 =     169.24820
+lat2 =     -27.87888
+lon3 =     169.27773
+lat3 =     -30.18116

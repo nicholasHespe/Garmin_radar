@@ -1,0 +1,13 @@
+IDR292.map
+29 Learmonth (256 km)
+projection = Gnomonic
+center_longitude =     113.99800
+center_latitude  =     -22.10400
+lon0 =     111.47816
+lat0 =     -24.37974
+lon1 =     111.55914
+lat1 =     -19.77277
+lon2 =     116.45551
+lat2 =     -19.77251
+lon3 =     116.53710
+lat3 =     -24.37942

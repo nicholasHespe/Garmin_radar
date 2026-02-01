@@ -2,6 +2,10 @@ import Toybox.Application;
 import Toybox.Lang;
 import Toybox.WatchUi;
 import Toybox.Time;
+import Toybox.Application.Storage;
+import Toybox.Communications;
+import Toybox.Timer;
+using Toybox.System;
 
 const IMG_NUM = 7;
 var img_request_response = 200;
@@ -17,21 +21,35 @@ class BetterWeatherApp extends Application.AppBase {
 
     function onImageReceived(responseCode as $.Toybox.Lang.Number , data as Null or $.Toybox.Graphics.BitmapReference or $.Toybox.WatchUi.BitmapResource) as Void {
         img_request_response = responseCode;
-        if (responseCode != 200) {
-            MakeRequest( Lang.format(URL_FORMAT , [imgs_remaining] ) );
-        }else{
+        System.println(Lang.format("Image response: $1$ for index: $2$", [responseCode, imgs_remaining]));
+
+        if (responseCode == 200) {
             // Store img in Storage
             var imgs = Storage.getValue("radar_imgaes");
-            imgs[imgs_remaining] = data;
-            Storage.setValue("radar_imgaes",imgs);
-            
+            if(imgs != null) {
+                imgs[imgs_remaining] = data;
+                Storage.setValue("radar_imgaes", imgs);
+                System.println(Lang.format("Stored image $1$", [imgs_remaining]));
+            }
+
             // Check if any images remaining
             if( imgs_remaining != 0 ){
                 // Decrement image counter
                 imgs_remaining--;
                 MakeRequest( Lang.format(URL_FORMAT , [imgs_remaining] ) );
             }else{
+                System.println("All images downloaded, starting refresh timer");
                 refreshImgTimer.start(method(:GetImages), 5*60000, false);
+            }
+        } else {
+            // On error, continue to next image instead of retrying same one
+            System.println(Lang.format("Failed to download image $1$: $2$", [imgs_remaining, responseCode]));
+            if( imgs_remaining != 0 ){
+                imgs_remaining--;
+                MakeRequest( Lang.format(URL_FORMAT , [imgs_remaining] ) );
+            } else {
+                // All downloads attempted, retry all after delay
+                refreshImgTimer.start(method(:GetImages), 30000, false);
             }
         }
     }
@@ -55,12 +73,17 @@ class BetterWeatherApp extends Application.AppBase {
 
     function initialize() {
         AppBase.initialize();
-        if(Storage.getValue("radar_imgaes") == null){
-            Storage.deleteValue("radar_imgaes");
-            Storage.setValue("radar_imgaes", imgs_template);
-            System.println("Reset imgaes");
+        // Initialize storage array if it doesn't exist
+        var imgs = Storage.getValue("radar_imgaes");
+        if(imgs == null){
+            imgs = new Array<Null or WatchUi.BitmapResource>[IMG_NUM];
+            for(var i = 0; i < IMG_NUM; i++) {
+                imgs[i] = null;
+            }
+            Storage.setValue("radar_imgaes", imgs);
+            System.println("Initialized radar images array");
         }
-        GetImages();       
+        GetImages();
     }
 
     // onStart() is called on application start up

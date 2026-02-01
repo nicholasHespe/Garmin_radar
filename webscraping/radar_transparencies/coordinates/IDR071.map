@@ -1,0 +1,13 @@
+IDR071.map
+07 Wyndham (512 km)
+projection = Gnomonic
+center_longitude =     128.11900
+center_latitude  =     -15.45300
+lon0 =     123.25545
+lat0 =     -19.96954
+lon1 =     123.46642
+lat1 =     -10.78777
+lon2 =     132.81541
+lat2 =     -10.78711
+lon3 =     133.02835
+lat3 =     -19.96828

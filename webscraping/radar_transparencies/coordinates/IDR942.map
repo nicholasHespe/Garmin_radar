@@ -1,0 +1,13 @@
+IDR942.map
+94 Hillston (256 km)
+projection = Gnomonic
+center_longitude =     145.52859
+center_latitude  =     -33.55190
+lon0 =     142.70352
+lat0 =     -35.81269
+lon1 =     142.85002
+lat1 =     -31.21337
+lon2 =     148.23016
+lat2 =     -31.21288
+lon3 =     148.37793
+lat3 =     -35.81212

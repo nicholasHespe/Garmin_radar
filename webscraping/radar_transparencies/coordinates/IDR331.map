@@ -1,0 +1,13 @@
+IDR331.map
+33 Ceduna (512 km)
+projection = Gnomonic
+center_longitude =     133.69501
+center_latitude  =     -32.13100
+lon0 =     128.00806
+lat0 =     -36.57648
+lon1 =     128.55209
+lat1 =     -27.41486
+lon2 =     138.88806
+lat2 =     -27.41300
+lon3 =     139.43733
+lat3 =     -36.57383

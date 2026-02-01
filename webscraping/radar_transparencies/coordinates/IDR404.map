@@ -1,0 +1,13 @@
+IDR404.map
+40 Canberra (64 km)
+projection = Gnomonic
+center_longitude =     149.51080
+center_latitude  =     -35.66280
+lon0 =     148.80022
+lat0 =     -36.23508
+lon1 =     148.81039
+lat1 =     -35.08324
+lon2 =     150.21800
+lat2 =     -35.08321
+lon3 =     150.22829
+lat3 =     -36.23504

@@ -1,0 +1,13 @@
+IDR1081.map
+108 Toowoomba (512 km)
+projection = Gnomonic
+center_longitude =     151.99240
+center_latitude  =     -27.27430
+lon0 =     146.62158
+lat0 =     -31.74164
+lon1 =     147.04697
+lat1 =     -22.58253
+lon2 =     156.97638
+lat2 =     -22.58134
+lon3 =     157.40504
+lat3 =     -31.73987

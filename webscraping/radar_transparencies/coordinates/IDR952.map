@@ -1,0 +1,13 @@
+IDR952.map
+95 Rainbow (256 km)
+projection = Gnomonic
+center_longitude =     142.01331
+center_latitude  =     -35.99750
+lon0 =     139.09541
+lat0 =     -38.25198
+lon1 =     139.26060
+lat1 =     -33.65689
+lon2 =     144.78400
+lat2 =     -33.65649
+lon3 =     144.95026
+lat3 =     -38.25150

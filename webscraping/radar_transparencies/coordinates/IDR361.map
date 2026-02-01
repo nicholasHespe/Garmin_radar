@@ -1,0 +1,13 @@
+IDR361.map
+36 Mornington Is (512 km)
+projection = Gnomonic
+center_longitude =     139.16701
+center_latitude  =     -16.66600
+lon0 =     134.26154
+lat0 =     -21.18403
+lon1 =     134.49156
+lat1 =     -12.00208
+lon2 =     143.88136
+lat2 =     -12.00143
+lon3 =     144.11330
+lat3 =     -21.18285

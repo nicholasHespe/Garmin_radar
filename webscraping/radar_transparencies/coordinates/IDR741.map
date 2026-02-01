@@ -1,0 +1,13 @@
+IDR741.map
+74 Greenvale (512 km)
+projection = Gnomonic
+center_longitude =     144.99500
+center_latitude  =     -18.99700
+lon0 =     140.00154
+lat0 =     -23.49822
+lon1 =     140.26976
+lat1 =     -14.31899
+lon2 =     149.74706
+lat2 =     -14.31845
+lon3 =     150.01680
+lat3 =     -23.49731

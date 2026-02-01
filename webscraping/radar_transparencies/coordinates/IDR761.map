@@ -1,0 +1,13 @@
+IDR761.map
+76 Mt Koonya (512 km)
+projection = Gnomonic
+center_longitude =     147.80600
+center_latitude  =     -43.11200
+lon0 =     141.03836
+lat0 =     -47.49391
+lon1 =     141.97908
+lat1 =     -38.34960
+lon2 =     153.67903
+lat2 =     -38.34730
+lon3 =     154.62708
+lat3 =     -47.49074

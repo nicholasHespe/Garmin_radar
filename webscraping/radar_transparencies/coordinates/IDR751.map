@@ -1,0 +1,13 @@
+IDR751.map
+75 Mt Isa  (512 km)
+projection = Gnomonic
+center_longitude =     139.55499
+center_latitude  =     -20.71120
+lon0 =     134.50290
+lat0 =     -25.20734
+lon1 =     134.80000
+lat1 =     -16.03276
+lon2 =     144.35052
+lat2 =     -16.03187
+lon3 =     144.65013
+lat3 =     -25.20587

@@ -1,0 +1,13 @@
+IDR781.map
+78 Weipa (512 km)
+projection = Gnomonic
+center_longitude =     141.92200
+center_latitude  =     -12.67100
+lon0 =     137.14349
+lat0 =     -17.19992
+lon1 =     137.31261
+lat1 =      -8.02710
+lon2 =     146.57736
+lat2 =      -8.02658
+lon3 =     146.74815
+lat3 =     -17.19879

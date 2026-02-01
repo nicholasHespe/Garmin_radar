@@ -1,0 +1,13 @@
+IDR491.map
+49 Yarrawonga (512 km)
+projection = Gnomonic
+center_longitude =     146.02299
+center_latitude  =     -36.03000
+lon0 =     140.01073
+lat0 =     -40.45607
+lon1 =     140.67126
+lat1 =     -31.30088
+lon2 =     151.40787
+lat2 =     -31.29949
+lon3 =     152.07245
+lat3 =     -40.45413

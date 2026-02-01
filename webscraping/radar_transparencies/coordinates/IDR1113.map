@@ -1,0 +1,13 @@
+IDR1113.map
+111  Karratha  (128 km)
+projection = Gnomonic
+center_longitude =     116.87580
+center_latitude  =     -20.99240
+lon0 =     115.63670
+lat0 =     -22.13647
+lon1 =     115.65568
+lat1 =     -19.83204
+lon2 =     118.10548
+lat2 =     -19.83197
+lon3 =     118.12461
+lat3 =     -22.13639

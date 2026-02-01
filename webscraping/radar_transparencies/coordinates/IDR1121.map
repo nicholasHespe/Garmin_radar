@@ -1,0 +1,13 @@
+IDR1121.map
+112 Gove Ap (512 km)
+projection = Gnomonic
+center_longitude =     136.82043
+center_latitude  =     -12.26898
+lon0 =     132.04556
+lat0 =     -16.80330
+lon1 =     132.20915
+lat1 =      -7.62794
+lon2 =     141.46761
+lat2 =      -7.62756
+lon3 =     141.63246
+lat3 =     -16.80244

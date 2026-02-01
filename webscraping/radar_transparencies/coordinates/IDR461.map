@@ -1,0 +1,13 @@
+IDR461.map
+46 Sellicks Hill (512 km)
+projection = Gnomonic
+center_longitude =     138.50000
+center_latitude  =     -35.33000
+lon0 =     132.54834
+lat0 =     -39.75830
+lon1 =     133.18687
+lat1 =     -30.59665
+lon2 =     143.85092
+lat2 =     -30.59510
+lon3 =     144.49394
+lat3 =     -39.75613

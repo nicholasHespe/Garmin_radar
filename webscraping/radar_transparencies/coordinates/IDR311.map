@@ -1,0 +1,13 @@
+IDR311.map
+31 Albany (512 km)
+projection = Gnomonic
+center_longitude =     117.80000
+center_latitude  =     -34.95000
+lon0 =     111.88002
+lat0 =     -39.38243
+lon1 =     112.50705
+lat1 =     -30.21632
+lon2 =     123.13418
+lat2 =     -30.21465
+lon3 =     123.76603
+lat3 =     -39.38008

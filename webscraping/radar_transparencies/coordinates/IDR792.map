@@ -1,0 +1,13 @@
+IDR792.map
+79 Watheroo (256 km)
+projection = Gnomonic
+center_longitude =     116.29220
+center_latitude  =     -30.36000
+lon0 =     113.57445
+lat0 =     -32.61995
+lon1 =     113.69915
+lat1 =     -28.02673
+lon2 =     118.90432
+lat2 =     -28.02637
+lon3 =     119.02994
+lat3 =     -32.61951

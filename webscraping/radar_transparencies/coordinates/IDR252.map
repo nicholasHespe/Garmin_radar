@@ -1,0 +1,13 @@
+IDR252.map
+25 Alice Springs (256 km)
+projection = Gnomonic
+center_longitude =     133.89999
+center_latitude  =     -23.81700
+lon0 =     131.34856
+lat0 =     -26.08687
+lon1 =     131.43741
+lat1 =     -21.48689
+lon2 =     136.38187
+lat2 =     -21.48660
+lon3 =     136.47142
+lat3 =     -26.08652

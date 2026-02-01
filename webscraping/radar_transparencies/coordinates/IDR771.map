@@ -1,0 +1,13 @@
+IDR771.map
+77 Arafura (512 km)
+projection = Gnomonic
+center_longitude =     133.38000
+center_latitude  =     -11.64900
+lon0 =     128.61285
+lat0 =     -16.18659
+lon1 =     128.76810
+lat1 =      -6.99525
+lon2 =     138.02927
+lat2 =      -6.99489
+lon3 =     138.18576
+lat3 =     -16.18573
