@@ -121,7 +121,7 @@ def GetRecentRadarFiles(radar_id: str, count: int = 7) -> list:
         print(f'Error listing radar files: {e}')
         return []
 
-def InitializeImageBuffer(radar_id: str, num_images: int, composite_bg_path: str):
+def InitializeImageBuffer(radar_id: str, num_images: int, composite_bg_path: str, use_radar_naming: bool = False):
     """Download most recent radar images to populate buffer on startup"""
     print(f'Initializing image buffer with {num_images} most recent images...')
 
@@ -147,7 +147,7 @@ def InitializeImageBuffer(radar_id: str, num_images: int, composite_bg_path: str
                 os.rename(temp_output, filename)
 
             # Add to rolling buffer
-            UpdateImageNames(filename, num_images)
+            UpdateImageNames(filename, num_images, radar_id if use_radar_naming else None)
             downloaded_count += 1
             os.remove(filename)
         else:
@@ -155,17 +155,93 @@ def InitializeImageBuffer(radar_id: str, num_images: int, composite_bg_path: str
 
     print(f'Initialized buffer with {downloaded_count} images')
 
-    # Create composite grid
-    if downloaded_count > 0:
+    # Create composite grid (only for non-radar-specific naming)
+    if downloaded_count > 0 and not use_radar_naming:
         CombineImages(num_images, 3)
 
     return downloaded_count > 0
 
-def UpdateImageNames(fn: str, num: int):
+def GetOrCreateBackground(radar_id: str) -> str:
+    """Get or create composite background for a specific radar station"""
+    composite_bg_path = f'composite_background_{radar_id}.png'
+
+    # Return if already exists
+    if os.path.exists(composite_bg_path):
+        print(f'Using cached background for {radar_id}')
+        return composite_bg_path
+
+    # Download transparency layers and create background
+    print(f'Creating new background for {radar_id}...')
+    with FTP("ftp.bom.gov.au") as ftp:
+        ftp.login()
+        transparency_layers = DownloadTransparencies(radar_id)
+        if transparency_layers:
+            CreateCompositeBackground(transparency_layers, composite_bg_path)
+            return composite_bg_path
+        else:
+            print(f'Warning: Could not create background for {radar_id}')
+            return None
+
+def GenerateImagesForRadar(radar_id: str, num_images: int = 7) -> bool:
+    """Generate radar images for a specific station on-demand"""
+    print(f'Generating {num_images} images for {radar_id}...')
+
+    # Get or create background for this radar
+    composite_bg_path = GetOrCreateBackground(radar_id)
+    if not composite_bg_path:
+        print(f'Failed to get background for {radar_id}')
+        return False
+
+    # Connect to FTP and generate images
+    try:
+        with FTP("ftp.bom.gov.au") as ftp:
+            ftp.login()
+            ftp.cwd("/anon/gen/radar")
+
+            # Get most recent radar files
+            recent_files = GetRecentRadarFiles(radar_id, num_images)
+            if not recent_files:
+                print(f'No radar files found for {radar_id}')
+                return False
+
+            # Download and process each file
+            downloaded_count = 0
+            for idx, filename in enumerate(reversed(recent_files)):  # Oldest to newest
+                if DownloadFile(filename):
+                    # Crop and resize
+                    CropAndResize(filename)
+
+                    # Composite with background
+                    temp_output = 'temp_radar_composite.png'
+                    CompositeRadarOnBackground(filename, composite_bg_path, temp_output)
+
+                    # Save with radar-specific naming
+                    output_name = f'images/{radar_id}-{idx}.png'
+                    os.rename(temp_output, output_name)
+                    os.remove(filename)
+
+                    downloaded_count += 1
+                    print(f'Generated {output_name}')
+                else:
+                    print(f'Failed to download {filename}')
+
+            print(f'Generated {downloaded_count}/{num_images} images for {radar_id}')
+            return downloaded_count > 0
+
+    except Exception as e:
+        print(f'Error generating images for {radar_id}: {e}')
+        return False
+
+def UpdateImageNames(fn: str, num: int, radar_id: str = None):
+    """Update rolling buffer of images with optional radar-specific naming"""
     new_img = Image.open(fn)
     img_list = []
+
+    # Use radar-specific naming if provided
+    name_pattern = f'images/{radar_id}-{{i}}.png' if radar_id else 'images/{i}.png'
+
     for i in range(num):
-        img_name = f'images/{i}.png'
+        img_name = name_pattern.format(i=i)
         if not os.path.isfile(img_name):
             new_img.save(img_name)
             return
@@ -176,7 +252,7 @@ def UpdateImageNames(fn: str, num: int):
     img_list.append(new_img)
     # save in order
     for i in range(num):
-        img_name = f'images/{i}.png'
+        img_name = name_pattern.format(i=i)
         img_list[i].save(img_name)
 
 def CombineImages(num: int, cols: int):
@@ -256,8 +332,8 @@ while True:
                 os.remove(filename)
                 os.rename(temp_output, filename)
 
-            # Update rolling buffer of images
-            UpdateImageNames(filename, image_count)
+            # Update rolling buffer of images (no radar-specific naming for default station)
+            UpdateImageNames(filename, image_count, None)
 
             # Create composite grid image
             CombineImages(image_count, 3)

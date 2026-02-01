@@ -1,7 +1,16 @@
 from flask import Flask, request, jsonify
 import math
+import os
+import sys
+import threading
+
+# Add current directory to path to import ftpscraper functions
+sys.path.insert(0, '/app')
 
 app = Flask(__name__)
+
+# Track ongoing generation tasks to prevent duplicates
+generation_locks = {}
 
 # Australian BOM Radar Stations with coordinates
 # Source: http://www.bom.gov.au/products/radar_transparencies.shtml
@@ -85,6 +94,86 @@ def receive_location():
         return jsonify({'status': 'error', 'message': 'Invalid coordinates'}), 400
     except Exception as e:
         print(f'Error processing location: {e}')
+        return jsonify({'status': 'error', 'message': str(e)}), 500
+
+@app.route('/api/check-images/<radar_id>', methods=['GET'])
+def check_images(radar_id):
+    """Check if images exist for a radar station"""
+    try:
+        # Validate radar_id
+        if radar_id not in RADAR_STATIONS:
+            return jsonify({'status': 'error', 'message': 'Invalid radar ID'}), 400
+
+        # Check if all 7 images exist
+        images_exist = []
+        for i in range(7):
+            image_path = f'/app/images/{radar_id}-{i}.png'
+            images_exist.append(os.path.exists(image_path))
+
+        all_exist = all(images_exist)
+
+        return jsonify({
+            'status': 'success',
+            'radar_id': radar_id,
+            'all_images_exist': all_exist,
+            'images_exist': images_exist
+        }), 200
+
+    except Exception as e:
+        print(f'Error checking images: {e}')
+        return jsonify({'status': 'error', 'message': str(e)}), 500
+
+@app.route('/api/generate/<radar_id>', methods=['POST'])
+def generate_images(radar_id):
+    """Trigger image generation for a radar station"""
+    try:
+        # Validate radar_id
+        if radar_id not in RADAR_STATIONS:
+            return jsonify({'status': 'error', 'message': 'Invalid radar ID'}), 400
+
+        # Check if already generating
+        if radar_id in generation_locks:
+            return jsonify({
+                'status': 'in_progress',
+                'message': f'Images for {radar_id} are already being generated'
+            }), 202
+
+        # Check if images already exist
+        all_exist = all(os.path.exists(f'/app/images/{radar_id}-{i}.png') for i in range(7))
+        if all_exist:
+            return jsonify({
+                'status': 'success',
+                'message': f'Images for {radar_id} already exist'
+            }), 200
+
+        # Start generation in background thread
+        generation_locks[radar_id] = True
+
+        def generate_in_background():
+            try:
+                # Import here to avoid module-level execution issues
+                from ftpscraper import GenerateImagesForRadar
+                success = GenerateImagesForRadar(radar_id, 7)
+                print(f'Background generation for {radar_id}: {"success" if success else "failed"}')
+            except Exception as e:
+                print(f'Error in background generation for {radar_id}: {e}')
+            finally:
+                if radar_id in generation_locks:
+                    del generation_locks[radar_id]
+
+        thread = threading.Thread(target=generate_in_background)
+        thread.daemon = True
+        thread.start()
+
+        return jsonify({
+            'status': 'generating',
+            'message': f'Started generating images for {radar_id}'
+        }), 202
+
+    except Exception as e:
+        print(f'Error triggering generation: {e}')
+        if radar_id in generation_locks:
+            del generation_locks[radar_id]
         return jsonify({'status': 'error', 'message': str(e)}), 500
 
 @app.route('/api/health', methods=['GET'])
