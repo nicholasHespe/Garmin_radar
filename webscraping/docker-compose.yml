@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  betterweather-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: betterweather-radar
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    volumes:
+      # Persist images directory to avoid re-downloading on container restart
+      - ./images:/app/images
+      # Optional: Mount custom updateDNS.sh if you have one
+      # - ./updateDNS.sh:/app/updateDNS.sh:ro
+    environment:
+      - TZ=Australia/Sydney  # Adjust to your timezone
+    healthcheck:
+      test: ["CMD", "test", "-f", "/app/images/0.png"]
+      interval: 60s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"

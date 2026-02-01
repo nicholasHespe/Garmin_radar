@@ -13,128 +13,130 @@ var img_request_response = 200;
 [ @file = "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc"; @line = 8; @position = 4; ]
 var imgs_remaining;
 [ @file = "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc"; @line = 10; @position = 4; ]
+var URL_FORMAT = "http://124.170.227.245/images/$1$.png";
+[ @file = "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc"; @line = 12; @position = 4; ]
 var imgs_template;
-[ @file = "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc"; @line = 12; ]
+[ @file = "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc"; @line = 14; ]
 class BetterWeatherApp extends Application.AppBase{
-    [ @file = "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc"; @line = 12; ]
+    [ @file = "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc"; @line = 14; ]
     <init> {
-[ "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc" 14 8 ]
+[ "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc" 16 8 ]
         %tmp.4 = getv ? :Timer;
         %tmp.5 = getv function ? %tmp.4 :Timer;
         %tmp.1 = newc %tmp.5 ();
         putv self :refreshImgTimer %tmp.1;
     }
-    [ @file = "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc"; @line = 12; ]
+    [ @file = "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc"; @line = 14; ]
     static
     <init> {
     }
-    [ @file = "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc"; @line = 14; @position = 8; ]
+    [ @file = "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc"; @line = 16; @position = 8; ]
     var refreshImgTimer;
-    [ @file = "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc"; @line = 16; ]
+    [ @file = "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc"; @line = 18; ]
     function onImageReceived(responseCode as $.Toybox.Lang.Number, data as Null or $.Toybox.Graphics.BitmapReference or $.Toybox.WatchUi.BitmapResource) as Void {
-D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_16_162_start:
-[ "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc" 17 8 ]
+D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_18_162_start:
+[ "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc" 19 8 ]
         %tmp.2 = lgetv %responseCode;
         putv self :img_request_response %tmp.2;
-[ "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc" 18 8 ]
-D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_18_8_if_stmt:
+[ "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc" 20 8 ]
+D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_20_8_if_stmt:
         %tmp.4 = lgetv %responseCode;
         %tmp.5 = 200;
         %tmp.6 = ne %tmp.4 %tmp.5;
-        bf %tmp.6 @D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_18_8_if_false;
-D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_18_8_if_true:
-D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_18_33_start:
-[ "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc" 19 12 ]
+        bf %tmp.6 @D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_20_8_if_false;
+D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_20_8_if_true:
+D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_20_33_start:
+[ "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc" 21 12 ]
         %tmp.7 = self;
         %tmp.8 = getv function %tmp.7 :MakeRequest;
         %tmp.9 = getm $.Toybox.Lang;
         %tmp.10 = getv function %tmp.9 :format;
-        %tmp.11 = "http://220.244.107.80/webscraping/images/$1$.png";
-        %tmp.12 = newa 1;
-        %tmp.14 = getv ? :imgs_remaining;
-        %tmp.15 = dup %tmp.12;
-        %tmp.16 = aputv %tmp.15 0 %tmp.14;
-        %tmp.17 = invoke %tmp.9 %tmp.10(%tmp.11, %tmp.16);
-        invoke %tmp.7 %tmp.8(%tmp.17);
-D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_18_33_stop:
-        goto @D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_18_8_if_end;
-D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_18_8_if_false:
-D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_20_13_start:
-[ "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc" 22 12 ]
-        [ "D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_20_13_start" "D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_20_13_stop" ]
-        %imgs.1 = local;
-        %tmp.19 = getv ? :Storage;
-        %tmp.20 = getv function %tmp.19 :getValue;
-        %tmp.21 = "radar_imgaes";
-        %tmp.22 = invoke %tmp.19 %tmp.20(%tmp.21);
-        lputv %imgs.1 %tmp.22;
-[ "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc" 23 12 ]
-        %tmp.23 = lgetv %imgs.1;
-        %tmp.25 = lgetv %data;
-        %tmp.27 = getv ? :imgs_remaining;
-        aputv %tmp.23 %tmp.27 %tmp.25;
+        %tmp.12 = getv ? :URL_FORMAT;
+        %tmp.13 = newa 1;
+        %tmp.15 = getv ? :imgs_remaining;
+        %tmp.16 = dup %tmp.13;
+        %tmp.17 = aputv %tmp.16 0 %tmp.15;
+        %tmp.18 = invoke %tmp.9 %tmp.10(%tmp.12, %tmp.17);
+        invoke %tmp.7 %tmp.8(%tmp.18);
+D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_20_33_stop:
+        goto @D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_20_8_if_end;
+D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_20_8_if_false:
+D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_22_13_start:
 [ "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc" 24 12 ]
-        %tmp.29 = getv ? :Storage;
-        %tmp.30 = getv function %tmp.29 :setValue;
-        %tmp.31 = "radar_imgaes";
-        %tmp.33 = lgetv %imgs.1;
-        invoke %tmp.29 %tmp.30(%tmp.31, %tmp.33);
-[ "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc" 27 12 ]
-D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_27_12_if_stmt:
-        %tmp.35 = getv ? :imgs_remaining;
-        %tmp.36 = 0;
-        %tmp.37 = ne %tmp.35 %tmp.36;
-        bf %tmp.37 @D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_27_12_if_false;
-D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_27_12_if_true:
-D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_27_37_start:
-[ "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc" 29 16 ]
-        %tmp.40 = getv ? :imgs_remaining;
-        %tmp.41 = sub %tmp.40 1;
-        putv self :imgs_remaining dup %tmp.41;
-[ "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc" 30 16 ]
-        %tmp.42 = self;
-        %tmp.43 = getv function %tmp.42 :MakeRequest;
-        %tmp.44 = getm $.Toybox.Lang;
-        %tmp.45 = getv function %tmp.44 :format;
-        %tmp.46 = "http://220.244.107.80/webscraping/images/$1$.png";
-        %tmp.47 = newa 1;
-        %tmp.49 = getv ? :imgs_remaining;
-        %tmp.50 = dup %tmp.47;
-        %tmp.51 = aputv %tmp.50 0 %tmp.49;
-        %tmp.52 = invoke %tmp.44 %tmp.45(%tmp.46, %tmp.51);
-        invoke %tmp.42 %tmp.43(%tmp.52);
-D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_27_37_stop:
-        goto @D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_27_12_if_end;
-D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_27_12_if_false:
-D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_31_17_start:
+        [ "D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_22_13_start" "D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_22_13_stop" ]
+        %imgs.1 = local;
+        %tmp.20 = getv ? :Storage;
+        %tmp.21 = getv function %tmp.20 :getValue;
+        %tmp.22 = "radar_imgaes";
+        %tmp.23 = invoke %tmp.20 %tmp.21(%tmp.22);
+        lputv %imgs.1 %tmp.23;
+[ "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc" 25 12 ]
+        %tmp.24 = lgetv %imgs.1;
+        %tmp.26 = lgetv %data;
+        %tmp.28 = getv ? :imgs_remaining;
+        aputv %tmp.24 %tmp.28 %tmp.26;
+[ "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc" 26 12 ]
+        %tmp.30 = getv ? :Storage;
+        %tmp.31 = getv function %tmp.30 :setValue;
+        %tmp.32 = "radar_imgaes";
+        %tmp.34 = lgetv %imgs.1;
+        invoke %tmp.30 %tmp.31(%tmp.32, %tmp.34);
+[ "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc" 29 12 ]
+D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_29_12_if_stmt:
+        %tmp.36 = getv ? :imgs_remaining;
+        %tmp.37 = 0;
+        %tmp.38 = ne %tmp.36 %tmp.37;
+        bf %tmp.38 @D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_29_12_if_false;
+D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_29_12_if_true:
+D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_29_37_start:
+[ "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc" 31 16 ]
+        %tmp.41 = getv ? :imgs_remaining;
+        %tmp.42 = sub %tmp.41 1;
+        putv self :imgs_remaining dup %tmp.42;
 [ "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc" 32 16 ]
-        %tmp.54 = getv ? :refreshImgTimer;
-        %tmp.55 = getv function %tmp.54 :start;
-        %tmp.56 = self;
-        %tmp.57 = getv function %tmp.56 :method;
-        %tmp.59 = const :GetImages;
-        %tmp.60 = invoke %tmp.56 %tmp.57(%tmp.59);
-        %tmp.61 = 5;
-        %tmp.62 = 60000;
-        %tmp.63 = mul %tmp.61 %tmp.62;
-        %tmp.64 = false;
-        invoke %tmp.54 %tmp.55(%tmp.60, %tmp.63, %tmp.64);
-D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_31_17_stop:
-D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_27_12_if_end:
-D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_20_13_stop:
-D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_18_8_if_end:
-D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_16_162_stop:
+        %tmp.43 = self;
+        %tmp.44 = getv function %tmp.43 :MakeRequest;
+        %tmp.45 = getm $.Toybox.Lang;
+        %tmp.46 = getv function %tmp.45 :format;
+        %tmp.48 = getv ? :URL_FORMAT;
+        %tmp.49 = newa 1;
+        %tmp.51 = getv ? :imgs_remaining;
+        %tmp.52 = dup %tmp.49;
+        %tmp.53 = aputv %tmp.52 0 %tmp.51;
+        %tmp.54 = invoke %tmp.45 %tmp.46(%tmp.48, %tmp.53);
+        invoke %tmp.43 %tmp.44(%tmp.54);
+D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_29_37_stop:
+        goto @D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_29_12_if_end;
+D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_29_12_if_false:
+D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_33_17_start:
+[ "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc" 34 16 ]
+        %tmp.56 = getv ? :refreshImgTimer;
+        %tmp.57 = getv function %tmp.56 :start;
+        %tmp.58 = self;
+        %tmp.59 = getv function %tmp.58 :method;
+        %tmp.61 = const :GetImages;
+        %tmp.62 = invoke %tmp.58 %tmp.59(%tmp.61);
+        %tmp.63 = 5;
+        %tmp.64 = 60000;
+        %tmp.65 = mul %tmp.63 %tmp.64;
+        %tmp.66 = false;
+        invoke %tmp.56 %tmp.57(%tmp.62, %tmp.65, %tmp.66);
+D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_33_17_stop:
+D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_29_12_if_end:
+D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_22_13_stop:
+D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_20_8_if_end:
+D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_18_162_stop:
     }
-    [ @file = "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc"; @line = 37; ]
+    [ @file = "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc"; @line = 39; ]
     function MakeRequest(url as String) {
-D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_37_40_start:
-[ "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc" 38 8 ]
-        [ "D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_37_40_start" "D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_37_40_stop" ]
+D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_39_40_start:
+[ "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc" 40 8 ]
+        [ "D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_39_40_start" "D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_39_40_stop" ]
         %parameters.1 = local;
         %tmp.1 = null;
         lputv %parameters.1 %tmp.1;
-[ "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc" 39 8 ]
-        [ "D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_37_40_start" "D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_37_40_stop" ]
+[ "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc" 41 8 ]
+        [ "D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_39_40_start" "D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_39_40_stop" ]
         %options.2 = local;
         %tmp.2 = newd 2;
         %tmp.4 = const :dithering;
@@ -148,7 +150,7 @@ D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_37_40_start:
         %tmp.15 = dup %tmp.9;
         %tmp.16 = aputv %tmp.15 %tmp.11 %tmp.14;
         lputv %options.2 %tmp.16;
-[ "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc" 45 8 ]
+[ "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc" 47 8 ]
         %tmp.18 = getv ? :System;
         %tmp.19 = getv function %tmp.18 :println;
         %tmp.20 = getm $.Toybox.Lang;
@@ -160,7 +162,7 @@ D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_37_40_start:
         %tmp.27 = aputv %tmp.26 0 %tmp.25;
         %tmp.28 = invoke %tmp.20 %tmp.21(%tmp.22, %tmp.27);
         invoke %tmp.18 %tmp.19(%tmp.28);
-[ "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc" 46 8 ]
+[ "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc" 48 8 ]
         %tmp.30 = getv ? :Communications;
         %tmp.31 = getv function %tmp.30 :makeImageRequest;
         %tmp.33 = lgetv %url;
@@ -171,118 +173,118 @@ D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_37_40_start:
         %tmp.41 = const :onImageReceived;
         %tmp.42 = invoke %tmp.38 %tmp.39(%tmp.41);
         invoke %tmp.30 %tmp.31(%tmp.33, %tmp.35, %tmp.37, %tmp.42);
-D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_37_40_stop:
+D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_39_40_stop:
     }
-    [ @file = "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc"; @line = 49; ]
+    [ @file = "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc"; @line = 51; ]
     function GetImages() as Void {
-D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_49_32_start:
-[ "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc" 50 8 ]
+D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_51_32_start:
+[ "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc" 52 8 ]
         %tmp.2 = getv ? :IMG_NUM;
         %tmp.3 = 1;
         %tmp.4 = sub %tmp.2 %tmp.3;
         putv self :imgs_remaining %tmp.4;
-[ "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc" 51 8 ]
+[ "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc" 53 8 ]
         %tmp.5 = self;
         %tmp.6 = getv function %tmp.5 :MakeRequest;
         %tmp.7 = getm $.Toybox.Lang;
         %tmp.8 = getv function %tmp.7 :format;
-        %tmp.9 = "http://220.244.107.80/webscraping/images/$1$.png";
-        %tmp.10 = newa 1;
-        %tmp.12 = getv ? :imgs_remaining;
-        %tmp.13 = dup %tmp.10;
-        %tmp.14 = aputv %tmp.13 0 %tmp.12;
-        %tmp.15 = invoke %tmp.7 %tmp.8(%tmp.9, %tmp.14);
-        invoke %tmp.5 %tmp.6(%tmp.15);
-D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_49_32_stop:
+        %tmp.10 = getv ? :URL_FORMAT;
+        %tmp.11 = newa 1;
+        %tmp.13 = getv ? :imgs_remaining;
+        %tmp.14 = dup %tmp.11;
+        %tmp.15 = aputv %tmp.14 0 %tmp.13;
+        %tmp.16 = invoke %tmp.7 %tmp.8(%tmp.10, %tmp.15);
+        invoke %tmp.5 %tmp.6(%tmp.16);
+D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_51_32_stop:
     }
-    [ @file = "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc"; @line = 54; ]
+    [ @file = "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc"; @line = 56; ]
     function initialize() as Void {
-D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_54_26_start:
-[ "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc" 55 8 ]
+D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_56_26_start:
+[ "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc" 57 8 ]
         %tmp.2 = getv ? :AppBase;
         %tmp.3 = getv function %tmp.2 :initialize;
         invoke %tmp.2 %tmp.3();
-[ "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc" 56 8 ]
-D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_56_8_if_stmt:
+[ "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc" 58 8 ]
+D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_58_8_if_stmt:
         %tmp.5 = getv ? :Storage;
         %tmp.6 = getv function %tmp.5 :getValue;
         %tmp.7 = "radar_imgaes";
         %tmp.8 = invoke %tmp.5 %tmp.6(%tmp.7);
         %tmp.9 = null;
         %tmp.10 = eq %tmp.8 %tmp.9;
-        bf %tmp.10 @D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_56_8_if_end;
-D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_56_8_if_true:
-D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_56_52_start:
-[ "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc" 57 12 ]
+        bf %tmp.10 @D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_58_8_if_end;
+D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_58_8_if_true:
+D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_58_52_start:
+[ "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc" 59 12 ]
         %tmp.12 = getv ? :Storage;
         %tmp.13 = getv function %tmp.12 :deleteValue;
         %tmp.14 = "radar_imgaes";
         invoke %tmp.12 %tmp.13(%tmp.14);
-[ "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc" 58 12 ]
+[ "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc" 60 12 ]
         %tmp.16 = getv ? :Storage;
         %tmp.17 = getv function %tmp.16 :setValue;
         %tmp.18 = "radar_imgaes";
         %tmp.20 = getv ? :imgs_template;
         invoke %tmp.16 %tmp.17(%tmp.18, %tmp.20);
-[ "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc" 59 12 ]
+[ "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc" 61 12 ]
         %tmp.22 = getv ? :System;
         %tmp.23 = getv function %tmp.22 :println;
         %tmp.24 = "Reset imgaes";
         invoke %tmp.22 %tmp.23(%tmp.24);
-D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_56_52_stop:
-        goto @D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_56_8_if_end;
-D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_56_8_if_end:
-[ "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc" 61 8 ]
+D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_58_52_stop:
+        goto @D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_58_8_if_end;
+D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_58_8_if_end:
+[ "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc" 63 8 ]
         %tmp.25 = self;
         %tmp.26 = getv function %tmp.25 :GetImages;
         invoke %tmp.25 %tmp.26();
-D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_54_26_stop:
+D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_56_26_stop:
     }
-    [ @file = "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc"; @line = 65; ]
+    [ @file = "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc"; @line = 67; ]
     function onStart(state as Dictionary or Null) as Void {
     }
-    [ @file = "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc"; @line = 68; ]
+    [ @file = "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc"; @line = 70; ]
     function onUpdate() as Void {
-D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_68_32_start:
-[ "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc" 69 8 ]
+D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_70_32_start:
+[ "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc" 71 8 ]
         %tmp.2 = getv ? :System;
         %tmp.3 = getv function %tmp.2 :println;
         %tmp.4 = "hey";
         invoke %tmp.2 %tmp.3(%tmp.4);
-[ "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc" 70 8 ]
-D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_70_8_if_stmt:
+[ "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc" 72 8 ]
+D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_72_8_if_stmt:
         %tmp.6 = getv ? :imgs_remaining;
         %tmp.8 = getv ? :IMG_NUM;
         %tmp.9 = 1;
         %tmp.10 = sub %tmp.8 %tmp.9;
         %tmp.11 = eq %tmp.6 %tmp.10;
-        bf %tmp.11 @D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_70_8_if_end;
-D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_70_8_if_true:
-D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_70_40_start:
-[ "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc" 71 12 ]
+        bf %tmp.11 @D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_72_8_if_end;
+D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_72_8_if_true:
+D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_72_40_start:
+[ "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc" 73 12 ]
         %tmp.12 = self;
         %tmp.13 = getv function %tmp.12 :MakeRequest;
         %tmp.14 = getm $.Toybox.Lang;
         %tmp.15 = getv function %tmp.14 :format;
-        %tmp.16 = "http://220.244.107.80/webscraping/images/$1$.png";
-        %tmp.17 = newa 1;
-        %tmp.19 = getv ? :imgs_remaining;
-        %tmp.20 = dup %tmp.17;
-        %tmp.21 = aputv %tmp.20 0 %tmp.19;
-        %tmp.22 = invoke %tmp.14 %tmp.15(%tmp.16, %tmp.21);
-        invoke %tmp.12 %tmp.13(%tmp.22);
-D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_70_40_stop:
-        goto @D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_70_8_if_end;
-D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_70_8_if_end:
-D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_68_32_stop:
+        %tmp.17 = getv ? :URL_FORMAT;
+        %tmp.18 = newa 1;
+        %tmp.20 = getv ? :imgs_remaining;
+        %tmp.21 = dup %tmp.18;
+        %tmp.22 = aputv %tmp.21 0 %tmp.20;
+        %tmp.23 = invoke %tmp.14 %tmp.15(%tmp.17, %tmp.22);
+        invoke %tmp.12 %tmp.13(%tmp.23);
+D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_72_40_stop:
+        goto @D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_72_8_if_end;
+D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_72_8_if_end:
+D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_70_32_stop:
     }
-    [ @file = "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc"; @line = 76; ]
+    [ @file = "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc"; @line = 78; ]
     function onStop(state as Dictionary or Null) as Void {
     }
-    [ @file = "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc"; @line = 80; ]
+    [ @file = "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc"; @line = 82; ]
     function getInitialView() as Array<Views or InputDelegates> or Null {
-D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_80_65_start:
-[ "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc" 81 8 ]
+D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_82_65_start:
+[ "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc" 83 8 ]
         %tmp.1 = newa Array<Views or InputDelegates> 2;
         %tmp.5 = getv ? :BetterWeatherView;
         %tmp.2 = newc %tmp.5 ();
@@ -297,19 +299,19 @@ D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_80_65_start:
         %tmp.17 = dup %tmp.7;
         %tmp.18 = aputv %tmp.17 1 %tmp.8;
         ret %tmp.18;
-D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_80_65_stop:
+D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_82_65_stop:
     }
 }
-[ @file = "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc"; @line = 85; ]
+[ @file = "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc"; @line = 87; ]
 function getApp() as BetterWeatherApp {
-D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_85_38_start:
-[ "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc" 86 4 ]
+D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_87_38_start:
+[ "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc" 88 4 ]
     %tmp.1 = getm $.Toybox.Application;
     %tmp.2 = getv function %tmp.1 :getApp;
     %tmp.3 = invoke %tmp.1 %tmp.2();
     %tmp.4 = as %tmp.3 BetterWeatherApp;
     ret %tmp.4;
-D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_85_38_stop:
+D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_87_38_stop:
 }
 [ @file = "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc"; @line = 1; ]
 <init> {
@@ -318,7 +320,7 @@ D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherApp_mc_85_38_stop:
     %tmp.7 = 1;
     %tmp.8 = sub %tmp.6 %tmp.7;
     putv self :imgs_remaining %tmp.8;
-[ "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc" 10 4 ]
+[ "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherApp.mc" 12 4 ]
     %tmp.11 = getv ? :IMG_NUM;
     %tmp.9 = newa Array<Null or WatchUi.BitmapResource> %tmp.11;
     putv self :imgs_template %tmp.9;

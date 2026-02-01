@@ -7,7 +7,7 @@ const IMG_NUM = 7;
 var img_request_response = 200;
 var imgs_remaining = IMG_NUM-1;
 
-var URL_FORMAT = "http://garminradar.mooo.com/images/$1$.png"
+var URL_FORMAT = "http://betterweather.nickhespe.com/images/$1$.png";
 
 var imgs_template = new Array<Null or WatchUi.BitmapResource>[IMG_NUM];
 
