@@ -36,11 +36,13 @@ RUN echo 'server {\n\
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;\n\
     }\n\
     \n\
-    # Serve radar images\n\
+    # Proxy image requests to Flask for auto-generation\n\
     location /images/ {\n\
-        alias /app/images/;\n\
-        autoindex off;\n\
-        add_header Cache-Control "no-cache, must-revalidate";\n\
+        proxy_pass http://127.0.0.1:5000/images/;\n\
+        proxy_set_header Host $host;\n\
+        proxy_set_header X-Real-IP $remote_addr;\n\
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;\n\
+        proxy_read_timeout 120s;\n\
     }\n\
 }' > /etc/nginx/sites-available/default
 

@@ -471,6 +471,74 @@ D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherView_mc_116_72_start:
 D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherView_mc_116_72_stop:
         goto @D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherView_mc_116_8_if_end;
 D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherView_mc_116_8_if_end:
+[ "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherView.mc" 124 8 ]
+D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherView_mc_124_8_if_stmt:
+D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherView_mc_124_12_begin:
+        %tmp.195 = getm $;
+        %tmp.196 = getv %tmp.195 :gps_acquired;
+        %tmp.197 = not %tmp.196;
+        %tmp.198 = dup %tmp.197;
+        bt %tmp.198 @D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherView_mc_124_31_end;
+D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherView_mc_124_31_false:
+        %tmp.199 = getm $;
+        %tmp.200 = getv %tmp.199 :radar_id_received;
+        %tmp.201 = not %tmp.200;
+        %tmp.202 = or %tmp.197 %tmp.201;
+        push %tmp.202;
+D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherView_mc_124_31_end:
+        %tmp.203 = phi [%tmp.198 @D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherView_mc_124_12_begin] [%tmp.202 @D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherView_mc_124_31_false] [%tmp.203 @D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherView_mc_124_31_end];
+        bf %tmp.203 @D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherView_mc_124_8_if_end;
+D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherView_mc_124_8_if_true:
+D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherView_mc_124_53_start:
+[ "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherView.mc" 125 12 ]
+        %tmp.204 = lgetv %dc;
+        %tmp.205 = getv function %tmp.204 :setColor;
+        %tmp.206 = getm $.Toybox.Graphics;
+        %tmp.207 = getv %tmp.206 :COLOR_BLACK;
+        %tmp.208 = getm $.Toybox.Graphics;
+        %tmp.209 = getv %tmp.208 :COLOR_TRANSPARENT;
+        invoke %tmp.204 %tmp.205(%tmp.207, %tmp.209);
+[ "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherView.mc" 126 12 ]
+        %tmp.210 = lgetv %dc;
+        %tmp.211 = getv function %tmp.210 :fillRectangle;
+        %tmp.212 = 40;
+        %tmp.213 = 200;
+        %tmp.214 = 160;
+        %tmp.215 = 30;
+        invoke %tmp.210 %tmp.211(%tmp.212, %tmp.213, %tmp.214, %tmp.215);
+[ "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherView.mc" 127 12 ]
+        %tmp.216 = lgetv %dc;
+        %tmp.217 = getv function %tmp.216 :setColor;
+        %tmp.218 = getm $.Toybox.Graphics;
+        %tmp.219 = getv %tmp.218 :COLOR_WHITE;
+        %tmp.220 = getm $.Toybox.Graphics;
+        %tmp.221 = getv %tmp.220 :COLOR_TRANSPARENT;
+        invoke %tmp.216 %tmp.217(%tmp.219, %tmp.221);
+[ "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherView.mc" 128 12 ]
+        %tmp.222 = lgetv %dc;
+        %tmp.223 = getv function %tmp.222 :drawRectangle;
+        %tmp.224 = 40;
+        %tmp.225 = 200;
+        %tmp.226 = 160;
+        %tmp.227 = 30;
+        invoke %tmp.222 %tmp.223(%tmp.224, %tmp.225, %tmp.226, %tmp.227);
+[ "D:\Files\2023\Garmin Apps\BetterWeather\source\BetterWeatherView.mc" 129 12 ]
+        %tmp.228 = lgetv %dc;
+        %tmp.229 = getv function %tmp.228 :drawText;
+        %tmp.230 = 120;
+        %tmp.231 = 215;
+        %tmp.232 = getm $.Toybox.Graphics;
+        %tmp.233 = getv %tmp.232 :FONT_TINY;
+        %tmp.234 = "Acquiring GPS...";
+        %tmp.235 = getm $.Toybox.Graphics;
+        %tmp.236 = getv %tmp.235 :TEXT_JUSTIFY_CENTER;
+        %tmp.237 = getm $.Toybox.Graphics;
+        %tmp.238 = getv %tmp.237 :TEXT_JUSTIFY_VCENTER;
+        %tmp.239 = bitor %tmp.236 %tmp.238;
+        invoke %tmp.228 %tmp.229(%tmp.230, %tmp.231, %tmp.233, %tmp.234, %tmp.239);
+D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherView_mc_124_53_stop:
+        goto @D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherView_mc_124_8_if_end;
+D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherView_mc_124_8_if_end:
 D_Files_2023_Garmin_Apps_BetterWeather_source_BetterWeatherView_mc_74_36_stop:
     }
 }

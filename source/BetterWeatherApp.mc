@@ -115,9 +115,17 @@ class BetterWeatherApp extends Application.AppBase {
             if (new_radar_id != null && new_radar_id instanceof String) {
                 System.println(Lang.format("Received radar ID: $1$", [new_radar_id]));
 
-                // Check if radar changed
-                if (!new_radar_id.equals(current_radar_id)) {
-                    System.println(Lang.format("Radar changed from $1$ to $2$, re-downloading images", [current_radar_id, new_radar_id]));
+                var radar_changed = !new_radar_id.equals(current_radar_id);
+                var first_time = !radar_id_received;
+
+                // Update radar if changed or first time
+                if (radar_changed || first_time) {
+                    if (radar_changed) {
+                        System.println(Lang.format("Radar changed from $1$ to $2$, re-downloading images", [current_radar_id, new_radar_id]));
+                    } else {
+                        System.println(Lang.format("First radar ID received: $1$, starting download", [new_radar_id]));
+                    }
+
                     current_radar_id = new_radar_id;
                     Storage.setValue("radar_id", current_radar_id);
 
@@ -157,7 +165,15 @@ class BetterWeatherApp extends Application.AppBase {
             Storage.setValue("radar_imgaes", imgs);
             System.println("Initialized radar images array");
         }
-        GetImages();
+
+        // Only start downloading if we have a cached radar_id
+        // Otherwise, wait for GPS to provide one
+        if (radar_id_received) {
+            System.println("Using cached radar, starting download");
+            GetImages();
+        } else {
+            System.println("No cached radar, waiting for GPS");
+        }
     }
 
     // onStart() is called on application start up
