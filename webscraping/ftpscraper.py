@@ -7,27 +7,32 @@ import numpy as np
 import subprocess
 from pathlib import Path
 
-def DownloadFile(fn: str, local_path: str = None) -> bool:
+def DownloadFile(fn: str, local_path: str = None, ftp_conn=None) -> bool:
     """Download a file from FTP server"""
     try:
         save_path = local_path if local_path else fn
+        # Use provided FTP connection or fall back to global
+        ftp_to_use = ftp_conn if ftp_conn is not None else ftp
         with open(save_path, 'wb') as fp:
-            ftp.retrbinary(f'RETR {fn}', fp.write)
+            ftp_to_use.retrbinary(f'RETR {fn}', fp.write)
             print(f'Downloaded {fn} -> {save_path}')
             return True
     except Exception as e:
         print(f'File "{fn}" does not exist or failed to download: {e}')
         return False
 
-def DownloadTransparencies(radar_id: str, transparency_dir: str = 'radar_transparencies'):
+def DownloadTransparencies(radar_id: str, transparency_dir: str = 'radar_transparencies', ftp_conn=None):
     """Download background transparency layers for a radar station"""
     Path(transparency_dir).mkdir(exist_ok=True)
 
     layers = ['background', 'topography', 'roads']
     downloaded = {}
 
+    # Use provided FTP connection or fall back to global
+    ftp_to_use = ftp_conn if ftp_conn is not None else ftp
+
     print(f'Downloading transparency layers for {radar_id}...')
-    ftp.cwd('/anon/gen/radar_transparencies')
+    ftp_to_use.cwd('/anon/gen/radar_transparencies')
 
     for layer in layers:
         filename = f'{radar_id}.{layer}.png'
@@ -35,7 +40,7 @@ def DownloadTransparencies(radar_id: str, transparency_dir: str = 'radar_transpa
 
         # Only download if doesn't exist (transparencies don't change often)
         if not os.path.exists(local_path):
-            if DownloadFile(filename, local_path):
+            if DownloadFile(filename, local_path, ftp_to_use):
                 downloaded[layer] = local_path
             else:
                 print(f'Warning: Could not download {layer} layer')
@@ -43,7 +48,7 @@ def DownloadTransparencies(radar_id: str, transparency_dir: str = 'radar_transpa
             print(f'Using cached {filename}')
             downloaded[layer] = local_path
 
-    ftp.cwd('/anon/gen/radar')  # Return to radar directory
+    ftp_to_use.cwd('/anon/gen/radar')  # Return to radar directory
     return downloaded
 
 def CropAndResize(fn: str, path = ''):
@@ -99,14 +104,17 @@ def CompositeRadarOnBackground(radar_image_path: str, background_path: str, outp
     final.save(output_path, 'PNG')
     return output_path
 
-def GetRecentRadarFiles(radar_id: str, count: int = 7) -> list:
+def GetRecentRadarFiles(radar_id: str, count: int = 7, ftp_conn=None) -> list:
     """Find the most recent radar files on FTP server"""
     print(f'Scanning for recent {radar_id} radar files...')
 
     try:
+        # Use provided FTP connection or fall back to global
+        ftp_to_use = ftp_conn if ftp_conn is not None else ftp
+
         # List all files in radar directory
         files = []
-        ftp.retrlines('NLST', files.append)
+        ftp_to_use.retrlines('NLST', files.append)
 
         # Filter for our radar ID and sort by timestamp (filename contains timestamp)
         radar_files = [f for f in files if f.startswith(f'{radar_id}.T.') and f.endswith('.png')]
@@ -172,9 +180,9 @@ def GetOrCreateBackground(radar_id: str) -> str:
 
     # Download transparency layers and create background
     print(f'Creating new background for {radar_id}...')
-    with FTP("ftp.bom.gov.au") as ftp:
-        ftp.login()
-        transparency_layers = DownloadTransparencies(radar_id)
+    with FTP("ftp.bom.gov.au") as ftp_conn:
+        ftp_conn.login()
+        transparency_layers = DownloadTransparencies(radar_id, ftp_conn=ftp_conn)
         if transparency_layers:
             CreateCompositeBackground(transparency_layers, composite_bg_path)
             return composite_bg_path
@@ -194,12 +202,12 @@ def GenerateImagesForRadar(radar_id: str, num_images: int = 7) -> bool:
 
     # Connect to FTP and generate images
     try:
-        with FTP("ftp.bom.gov.au") as ftp:
-            ftp.login()
-            ftp.cwd("/anon/gen/radar")
+        with FTP("ftp.bom.gov.au") as ftp_conn:
+            ftp_conn.login()
+            ftp_conn.cwd("/anon/gen/radar")
 
             # Get most recent radar files
-            recent_files = GetRecentRadarFiles(radar_id, num_images)
+            recent_files = GetRecentRadarFiles(radar_id, num_images, ftp_conn)
             if not recent_files:
                 print(f'No radar files found for {radar_id}')
                 return False
@@ -207,7 +215,7 @@ def GenerateImagesForRadar(radar_id: str, num_images: int = 7) -> bool:
             # Download and process each file
             downloaded_count = 0
             for idx, filename in enumerate(reversed(recent_files)):  # Oldest to newest
-                if DownloadFile(filename):
+                if DownloadFile(filename, ftp_conn=ftp_conn):
                     # Crop and resize
                     CropAndResize(filename)
 
