@@ -231,7 +231,7 @@ with FTP("ftp.bom.gov.au") as ftp:
 
     # Populate image buffer with most recent radar data
     print('\n[2/2] Populating image buffer...')
-    ftp.cwd("anon/gen/radar")
+    ftp.cwd("/anon/gen/radar")
     InitializeImageBuffer(RADAR_ID, image_count, composite_bg_path)
 
 print('='*50)
@@ -243,7 +243,7 @@ while True:
         # Create filename based on 6 mins ago (BOM updates every 6-10 minutes)
         filename = (datetime.utcnow() - timedelta(minutes=6)).strftime(f'{RADAR_ID}.T.%Y%m%d%H%M.png')
         ftp.login()
-        ftp.cwd("anon/gen/radar")
+        ftp.cwd("/anon/gen/radar")
 
         if DownloadFile(filename):
             # Crop and resize radar image
